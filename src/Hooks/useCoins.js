@@ -6,7 +6,7 @@ const useCoins = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=falsees"
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -15,14 +15,10 @@ const useCoins = () => {
             coin.symbol.toLowerCase().includes(search.toLowerCase()) ||
             coin.name.toLowerCase().includes(search.toLowerCase())
         );
-        // const match = data.filter(
-        //   (coin) =>
-        //     coin.name.toLowerCase().includes(search.toLowerCase()) ||
-        //     coin.symbol.toLowerCase().includes(search.toLowerCase())
-        // );
+
         setCoins(match);
       });
   }, [search]);
-  return [coins, search, setSearch, isLoading];
+  return [coins, search, isLoading, setSearch];
 };
 export default useCoins;

@@ -14,6 +14,7 @@ const Coins = () => {
   if (isLoading) {
     return <Loading />;
   }
+  console.log(coins);
   return (
     <div className="overflow-x-auto">
       <div className="flex justify-start">
@@ -34,10 +35,9 @@ const Coins = () => {
         <table className="table table-zebra w-full mx-2">
           <thead>
             <tr>
-              {/* <th></th> */}
               <th className="text-sm text-info ">Name</th>
               <th className="text-sm text-info">Symbol</th>
-              <th className="text-sm text-info">Price (Dollar) </th>
+              <th className="text-sm text-info">Price ($) </th>
               <th className="text-sm text-info">MARKET CAP</th>
               <th className="text-sm text-info"> 24H CHANGE </th>
               <th className="text-sm text-info">24H VOLUME</th>
@@ -52,7 +52,6 @@ const Coins = () => {
           </tbody>
         </table>
       )}
-      
     </div>
   );
 };

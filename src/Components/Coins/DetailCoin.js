@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BsArrowDownShort } from "react-icons/bs";
 import { BsArrowUpShort } from "react-icons/bs";
+import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { FaShoppingCart } from "react-icons/fa";
 import Loading from "../Loading/Loading";
 const DetailCoin = () => {
   const [isLoading] = useState(false);
@@ -19,24 +21,19 @@ const DetailCoin = () => {
     return <Loading />;
   }
   return (
-    <section>
+    <section className=" bg-success">
       <div className="text-left px-4 lg:px-20 my-5 lg:my-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-5">
           <div>
             <p>
               <small className="bg-info px-3 py-1 rounded-md text-white">
-                Rank# {coin.name}
+                Rank #{coin.market_cap_rank}
               </small>
             </p>
             <div className="flex gap-2 my-3">
               <img src={coin.image?.thumb} alt="" style={{ width: "40px" }} />
               <p className="text-xl font-semibold">
                 {coin.name} (<span className="uppercase">{coin.symbol}</span>)
-              </p>
-            </div>
-            <div className="flex items-center gap-3">
-              <p className="text-4xl font-semibold">
-                ${coin.market_data?.current_price?.usd?.toLocaleString("en-US")}
               </p>
               <p
                 className={`flex justify-center items-center ${
@@ -51,6 +48,11 @@ const DetailCoin = () => {
                   <BsArrowDownShort className="h-5 w-5 text-red-500" />
                 )}
                 {coin.market_data?.price_change_percentage_24h?.toFixed(2)}%
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <p className="text-4xl font-semibold">
+                ${coin.market_data?.current_price?.usd?.toLocaleString("en-US")}
               </p>
             </div>
             <div className="flex gap-3 my-1 opacity-90">
@@ -68,19 +70,23 @@ const DetailCoin = () => {
               </p>
             </div>
             <div className="flex items-end gap-3">
-              <button className="btn btn-primary btn-outline my-3 duration-300 ease-in">
-                Add to cart
+              <button className="btn btn-info btn-outline my-3 duration-300 ease-in ">
+                <FaShoppingCart className="mr-2" /> Add to cart
               </button>
-              <Link
-                to="/coins"
-                className="font-semibold pb-3 opacity-90 hover:underline hover:opacity-900 duration-200 ease-in"
-              >
-                <small>Back to Coin list</small>
-              </Link>
+              <button className="btn btn-info btn-outline my-3 duration-300 ease-in ">
+                <Link to="/coins">
+                  <p className="flex justify-center items-center ">
+                    <BsFillArrowLeftSquareFill className="mr-2" /> Back to Coin
+                    list
+                  </p>
+                </Link>
+              </button>
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-bold opacity-90">Info </h2>
+            <h2 className="text-xl text-info font-bold opacity-90">
+              EXTRA INFORMATION{" "}
+            </h2>
             <div className="grid grid-cols-2 gap-5 opacity-90">
               <div>
                 <div className="lg:flex justify-between py-3 border-b">

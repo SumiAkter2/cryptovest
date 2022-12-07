@@ -12,7 +12,7 @@ module.exports = {
           neutral: "#37CDBE", // Navbar text
           "base-100": "#ffffff",
           info: "#0ea5e9",
-          success: "#000000", // backGround color
+          success: "#d1d5db", // backGround color
           warning: "#1B1821", // button color
           error: "#dc2626",
         },
@@ -25,7 +25,7 @@ module.exports = {
           neutral: "#ffffff",
           "base-100": "#1F2937",
           info: "#3ABFF8",
-          success: "#1BBB70",
+          success: "#4b5563",
           warning: "#fcfafa",
           error: "#be123c",
         },

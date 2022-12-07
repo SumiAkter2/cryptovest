@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ children, cart }) => {
   const [dark, setDark] = useState(false);
+  // let quantity = 0;
+  // cart.forEach((coin) => {
+  //   quantity = quantity + coin.quantity;
+  // });
   return (
     <div data-theme={dark ? "dark" : "light"}>
       <div className="drawer drawer-end fixed top-0 ">
@@ -38,10 +43,7 @@ const Navbar = ({ children }) => {
             <div className="flex-none hidden lg:block  ">
               <ul className="menu  menu-horizontal gap-x-2  ">
                 <li>
-                  <NavLink
-                    className="rounded-lg  text-accent my-2 "
-                    to="/"
-                  >
+                  <NavLink className="rounded-lg  text-accent my-2 " to="/">
                     Home
                   </NavLink>
                 </li>
@@ -62,7 +64,14 @@ const Navbar = ({ children }) => {
                     about
                   </NavLink>
                 </li>
-
+                <li>
+                  <NavLink
+                    className="rounded-lg  my-2  text-accent"
+                    to="/carts"
+                  >
+                    <HiOutlineShoppingCart /> {cart.length}
+                  </NavLink>
+                </li>
                 {/* {user && (
                     <li>
                       <NavLink className="rounded-lg  my-2  text-accent" to="/dashboard">
@@ -126,19 +135,13 @@ const Navbar = ({ children }) => {
           <label for="  my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-2 overflow-y-auto w-80 bg-base-100">
             <li>
-              <NavLink
-                className="rounded-lg  my-2  text-accent "
-                to="/"
-              >
+              <NavLink className="rounded-lg  my-2  text-accent " to="/">
                 Home
               </NavLink>
             </li>
 
             <li>
-              <NavLink
-                className="rounded-lg  my-2  text-accent"
-                to="/coins"
-              >
+              <NavLink className="rounded-lg  my-2  text-accent" to="/coins">
                 Coins
               </NavLink>
             </li>

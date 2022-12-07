@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../App";
+import useCart from "../../Hooks/useCart";
+import useCoins from "../../Hooks/useCoins";
+
 const AllCoins = ({ coin, index }) => {
   const navigate = useNavigate();
+  const addToCart = useContext(CartContext);
 
   return (
     <tr className="hover:cursor-pointer">
@@ -38,6 +43,7 @@ const AllCoins = ({ coin, index }) => {
         <button
           className="tooltip tooltip-left  tooltip-secondary"
           data-tip="Add To Cart "
+          onClick={() => addToCart(coin)}
         >
           <BsCart4 size="25px" />
         </button>
