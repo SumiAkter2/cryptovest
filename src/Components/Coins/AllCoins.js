@@ -1,11 +1,14 @@
 import React from "react";
 import { BsCart4 } from "react-icons/bs";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 const AllCoins = ({ coin, index }) => {
+  const navigate = useNavigate();
+
   return (
-    <tr>
+    <tr className="hover:cursor-pointer">
       <td>
-        {index + 1}. {coin.name}
+        {index + 1}. {coin.id}
       </td>
       <td className="flex font-bold">
         <img
@@ -26,6 +29,7 @@ const AllCoins = ({ coin, index }) => {
         <button
           className="tooltip tooltip-left  tooltip-secondary "
           data-tip="Details "
+          onClick={() => navigate(`detail/${coin.id}`)}
         >
           <IoMdInformationCircleOutline size="25px" />
         </button>
