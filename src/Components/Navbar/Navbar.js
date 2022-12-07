@@ -8,14 +8,14 @@ const Navbar = ({ children }) => {
       <div className="drawer drawer-end fixed top-0 ">
         <input id="  my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
-          <div className="w-full navbar  px-12">
+          <div className="w-full navbar bg-primary  px-12">
             <div className="flex-1 px-2 mx-2 font-bold text-2xl">
               <img
                 style={{ width: "70px" }}
                 src="https://i.ibb.co/XCqJxdh/realistic-bitcoin-crypto-currency-illustration-on-blue-background-vector-removebg-preview.png"
                 alt="bitcoin-logo"
               />
-              CryptoVest
+              <h2>CryptoVest</h2>
             </div>
             <div className="flex-none lg:hidden">
               <label for="  my-drawer-3" className="btn btn-square btn-ghost">
@@ -38,25 +38,34 @@ const Navbar = ({ children }) => {
             <div className="flex-none hidden lg:block  ">
               <ul className="menu  menu-horizontal gap-x-2  ">
                 <li>
-                  <NavLink className="rounded-lg  my-2 " to="/">
+                  <NavLink
+                    className="rounded-lg bg-secondary text-accent my-2 "
+                    to="/"
+                  >
                     Home
                   </NavLink>
                 </li>
 
                 <li>
-                  <NavLink className="rounded-lg  my-2" to="/coins">
+                  <NavLink
+                    className="rounded-lg  my-2 bg-secondary text-accent"
+                    to="/coins"
+                  >
                     Coins
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="rounded-lg  my-2" to="/about">
+                  <NavLink
+                    className="rounded-lg  my-2 bg-secondary text-accent"
+                    to="/about"
+                  >
                     about
                   </NavLink>
                 </li>
 
                 {/* {user && (
                     <li>
-                      <NavLink className="rounded-lg  my-2" to="/dashboard">
+                      <NavLink className="rounded-lg  my-2 bg-secondary text-accent" to="/dashboard">
                         Dashboard
                       </NavLink>
                     </li>
@@ -65,7 +74,7 @@ const Navbar = ({ children }) => {
                     <>
                       <li>
                         <button
-                          className="bg-primary rounded-lg  my-2"
+                          className="bg-primary rounded-lg  my-2 bg-secondary text-accent"
                           onClick={logout}
                         >
                           Sign Out
@@ -79,7 +88,7 @@ const Navbar = ({ children }) => {
                     </>
                   ) : (
                     <li>
-                      <NavLink className="rounded-lg  my-2" to="/login">
+                      <NavLink className="rounded-lg  my-2 bg-secondary text-accent" to="/login">
                         Log In
                       </NavLink>
                     </li>
@@ -116,22 +125,28 @@ const Navbar = ({ children }) => {
           <label for="  my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-2 overflow-y-auto w-80 bg-base-100">
             <li>
-              <NavLink className="rounded-lg  my-2 " to="/">
+              <NavLink
+                className="rounded-lg  my-2 bg-secondary text-accent "
+                to="/"
+              >
                 Home
               </NavLink>
             </li>
 
             <li>
-              <NavLink className="rounded-lg  my-2" to="/coins">
+              <NavLink
+                className="rounded-lg  my-2 bg-secondary text-accent"
+                to="/coins"
+              >
                 Coins
               </NavLink>
             </li>
             {/* {
-                            user && <li><NavLink className='rounded-lg  my-2' to='/purchase'>Purchase</NavLink></li>
+                            user && <li><NavLink className='rounded-lg  my-2 bg-secondary text-accent' to='/purchase'>Purchase</NavLink></li>
                         } */}
             {/* {user && (
                 <li>
-                  <NavLink className="rounded-lg  my-2" to="/dashboard">
+                  <NavLink className="rounded-lg  my-2 bg-secondary text-accent" to="/dashboard">
                     Dashboard
                   </NavLink>
                 </li>
@@ -140,7 +155,7 @@ const Navbar = ({ children }) => {
               {user ? (
                 <li>
                   <button
-                    className="bg-primary rounded-lg  my-2"
+                    className="bg-primary rounded-lg  my-2 bg-secondary text-accent"
                     onClick={logout}
                   >
                     Sign Out
@@ -148,7 +163,7 @@ const Navbar = ({ children }) => {
                 </li>
               ) : (
                 <li>
-                  <NavLink className="rounded-lg  my-2" to="/login">
+                  <NavLink className="rounded-lg  my-2 bg-secondary text-accent" to="/login">
                     Log In
                   </NavLink>
                 </li>

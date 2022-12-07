@@ -6,9 +6,9 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: "#93c5fd",
-          secondary: "#374151",
-          accent: "#ffffff", // Navbar backGround Color
+          primary: "#fff",
+          secondary: "#bae6fd",
+          accent: "#374151", // Navbar backGround Color
           neutral: "#000000", // Navbar text
           "base-100": "#ffffff",
           info: "#1B1821",
@@ -20,8 +20,8 @@ module.exports = {
       {
         dark: {
           primary: "#374151",
-          secondary: "#FDE68A",
-          accent: "#000000",
+          secondary: "#c7d2fe",
+          accent: "#000",
           neutral: "#ffffff",
           "base-100": "#1F2937",
           info: "#fde047",
