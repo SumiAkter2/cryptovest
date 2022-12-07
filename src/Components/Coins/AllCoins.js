@@ -1,6 +1,6 @@
 import React from "react";
 import { BsCart4 } from "react-icons/bs";
-import { BsInfoCircleFill } from "react-icons/bs";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 const AllCoins = ({ coin, index }) => {
   return (
     <tr>
@@ -24,11 +24,13 @@ const AllCoins = ({ coin, index }) => {
       <td>$ {coin.total_volume}</td>
       <td>
         <button
-          className="tooltip tooltip-left  tooltip-secondary bg-secondary"
-          data-tip="Add To Cart "
+          className="tooltip tooltip-left  tooltip-secondary "
+          data-tip="Details "
         >
-          <BsInfoCircleFill  size="25px" />
+          <IoMdInformationCircleOutline size="25px" />
         </button>
+      </td>
+      <td>
         <button
           className="tooltip tooltip-left  tooltip-secondary"
           data-tip="Add To Cart "

@@ -6,7 +6,7 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: "#fff",
+          primary: "#e5e7eb",
           secondary: "#bae6fd",
           accent: "#374151", // Navbar backGround Color
           neutral: "#37CDBE", // Navbar text
