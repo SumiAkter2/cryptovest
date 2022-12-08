@@ -1,9 +1,12 @@
 import React from "react";
 import { BsFillShieldLockFill } from "react-icons/bs";
+import { MdOutlinePayments } from "react-icons/md";
+import { RiMoneyDollarBoxFill } from "react-icons/ri";
+import Teams from "./Teams";
 const About = () => {
   return (
     <div>
-      <div className="lg:flex   justify-between bg-primary m-6 p-6 ">
+      <div className="lg:flex   justify-between bg-primary p-6 ">
         <div className=" ">
           <h1 className="lg:text-5xl text-3xl  font-bold px-12  pt-12 pb-6">
             WelCome To CryptoVest.
@@ -25,7 +28,7 @@ const About = () => {
 
       {/* second Part */}
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen "
         style={{
           backgroundImage: `url("https://i.ibb.co/LhSF4Bt/MIT-Vault-Cryptocurrency.jpg")`,
         }}
@@ -34,29 +37,29 @@ const About = () => {
         <div className="hero-content text-center ">
           <div className="max-w-full">
             {/* <h1 className="mb-5 text-5xl font-bold">Hello there</h1> */}
-            <p className="mb-5 text-white">
+            <p className="mb-12 text-lg text-white">
               A cryptocurrency is a digital currency, which is an alternative
               form of payment created using encryption algorithms.
-                      </p> 
-                      {/* card -1 */}
-            <div className="flex justify-center gap-4">
-              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-300">
+            </p>
+            {/* card -1 */}
+            <div className="lg:flex justify-center gap-4 text-gray-800">
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-400">
                 <h1>
-                  <BsFillShieldLockFill
+                  <MdOutlinePayments
                     size="50px"
                     className="text-white text-center bg-yellow-500 p-2 rounded-md mx-auto mb-6 hover:bg-yellow-600 "
                   />
                 </h1>
-                <h1 className="text-xl font-semibold mb-4">VERIFY ACCOUNT</h1>
+                <h1 className="text-xl font-semibold mb-4">PAYMENT ANYWHERE</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
                   nostrum, numquam ipsam quaerat natus odio eveniet dicta
                   delectus architecto consequatur rem doloremque et, fugiat nemo
                   velit voluptatum dolores explicabo ullam!
                 </p>
-                          </div>
-                          {/* card-2 */}
-              <div className=" shadow-2xl p-8 rounded-sm bg-yellow-500">
+              </div>
+              {/* card-2 */}
+              <div className=" shadow-2xl p-8 rounded-sm bg-yellow-500 hover:bg-yellow-300">
                 <h1>
                   <BsFillShieldLockFill
                     size="50px"
@@ -70,16 +73,18 @@ const About = () => {
                   delectus architecto consequatur rem doloremque et, fugiat nemo
                   velit voluptatum dolores explicabo ullam!
                 </p>
-                          </div>
-                          {/* card-3 */}
-              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-300">
+              </div>
+              {/* card-3 */}
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-400">
                 <h1>
-                  <BsFillShieldLockFill
+                  <RiMoneyDollarBoxFill
                     size="50px"
                     className="text-white text-center bg-yellow-500 p-2 rounded-md mx-auto mb-6 hover:bg-yellow-600 "
                   />
                 </h1>
-                <h1 className="text-xl font-semibold mb-4">VERIFY ACCOUNT</h1>
+                <h1 className="text-xl font-semibold mb-4">
+                  SAFELY TRANSACTION
+                </h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
                   nostrum, numquam ipsam quaerat natus odio eveniet dicta
@@ -92,6 +97,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* third part */}
+      <Teams />
     </div>
   );
 };
