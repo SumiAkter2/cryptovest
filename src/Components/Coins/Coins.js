@@ -4,26 +4,26 @@ import AllCoins from "./AllCoins";
 import Loading from "../Loading/Loading";
 
 const Coins = () => {
-  const [coins,setCoins] = useCoins();
-   const [searchedText, setSearchedText] = useState("");
+  const [coins, setCoins] = useCoins();
+  const [searchedText, setSearchedText] = useState("");
 
-   useEffect(() => {
-     // setIsLoading(true)
-     fetch(
-       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
-     )
-       .then((res) => res.json())
-       .then((data) => {
-         // console.log(data);
-         const match = data.filter(
-           (coin) =>
-             coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||
-             coin.symbol.toLowerCase().includes(searchedText.toLowerCase())
-         );
-         setCoins(match);
-         // setIsLoading(false)
-       });
-   }, [searchedText,setCoins]);
+  useEffect(() => {
+    // setIsLoading(true)
+    fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        const match = data.filter(
+          (coin) =>
+            coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||
+            coin.symbol.toLowerCase().includes(searchedText.toLowerCase())
+        );
+        setCoins(match);
+        // setIsLoading(false)
+      });
+  }, [searchedText, setCoins]);
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchedText(e.target.value);
@@ -36,7 +36,6 @@ const Coins = () => {
   // // console.log(coins);
   return (
     <div className="overflow-x-auto">
-      <h1> coins</h1>
       <div className="flex justify-start">
         <form onSubmit={handleSearch} className="my-12 mx-6">
           <input

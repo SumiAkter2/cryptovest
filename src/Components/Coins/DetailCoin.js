@@ -74,7 +74,7 @@ const DetailCoin = () => {
                 <FaShoppingCart className="mr-2" /> Add to cart
               </button>
               <button className="btn btn-info btn-outline my-3 duration-300 ease-in ">
-                <Link to="/coins">
+                <Link to="/coin">
                   <p className="flex justify-center items-center ">
                     <BsFillArrowLeftSquareFill className="mr-2" /> Back to Coin
                     list
@@ -85,7 +85,7 @@ const DetailCoin = () => {
           </div>
           <div>
             <h2 className="text-xl text-info font-bold opacity-90">
-              EXTRA INFORMATION{" "}
+              EXTRA INFORMATION
             </h2>
             <div className="grid grid-cols-2 gap-5 opacity-90">
               <div>

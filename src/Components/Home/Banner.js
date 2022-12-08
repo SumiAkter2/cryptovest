@@ -7,11 +7,11 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 const Banner = () => {
   return (
-    <div>
+    <div className="mx-5 mt-5">
       <Swiper
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         style={{
           "--swiper-navigation-color": "#fff",

@@ -32,7 +32,7 @@ const AllCoins = ({ coin, index }) => {
         <button
           className="tooltip tooltip-left  tooltip-secondary "
           data-tip="Details "
-          onClick={() => navigate(`detail/${coin.id}`)}
+          onClick={() => navigate(`/detail/${coin.id}`)}
         >
           <IoMdInformationCircleOutline size="25px" />
         </button>

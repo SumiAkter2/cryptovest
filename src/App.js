@@ -1,13 +1,13 @@
 import { createContext } from "react";
-import { QueryClient, QueryClientProvider,useQuery } from "react-query";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Carts from "./Components/Carts/Carts";
-import Coins from "./Components/Coins/Coins";
+import Coin from "./Components/Coins/Coin";
 import DetailCoin from "./Components/Coins/DetailCoin";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Loading from "./Components/Loading/Loading";
+import About from "./Components/About/About";
 import Navbar from "./Components/Navbar/Navbar";
 import NotFound from "./Components/NotFound/NotFound";
 import useCart from "./Hooks/useCart";
@@ -38,30 +38,28 @@ function App() {
   if (isLoading) {
     return <Loading />;
   }
-  
+
   return (
-   
-      <CartContext.Provider value={addToCart}>
-        <div className="App">
-          <Navbar cart={cart}>
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
+    <CartContext.Provider value={addToCart}>
+      <div className="App">
+        <Navbar cart={cart}>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
 
-              <Route path="/coin" element={<Coins />}></Route>
+            <Route path="/coin" element={<Coin />}></Route>
 
-              <Route path="/detail/:id" element={<DetailCoin />}></Route>
-              <Route
-                path="/carts"
-                element={<Carts cart={cart} refetch={refetch} />}
-              ></Route>
-              <Route path="*" element={<NotFound />}></Route>
-            </Routes>
-            <Footer />
-          </Navbar>
-        </div>
-      </CartContext.Provider>
-    
-   
+            <Route path="/detail/:id" element={<DetailCoin />}></Route>
+            <Route
+              path="/carts"
+              element={<Carts cart={cart} refetch={refetch} />}
+            ></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+          <Footer />
+        </Navbar>
+      </div>
+    </CartContext.Provider>
   );
 }
 

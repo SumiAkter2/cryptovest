@@ -45,10 +45,10 @@ const Carts = ({ cart, refetch }) => {
           </div>
           <div>
             <div className="m-5">
-              <h1 className="text-3xl lg:text-5xl font-bold mb-6 opacity-70 text-info">
+              <h1 className="text-3xl lg:text-5xl font-bold mb-8 opacity-70 text-info ">
                 Receipt
               </h1>
-              <div className="p-5 bg-base-100 border rounded-xl h-[420px] shadow-2xl shadow-gray-700">
+              <div className="p-5 bg-base-100 border rounded-xl h-[400px] shadow-2xl shadow-gray-700">
                 <ReceptPage cart={cart} refetch={refetch} />
               </div>
             </div>
