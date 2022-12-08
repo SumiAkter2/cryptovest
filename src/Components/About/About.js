@@ -1,11 +1,99 @@
-import React from 'react';
-
+import React from "react";
+import { BsFillShieldLockFill } from "react-icons/bs";
 const About = () => {
-    return (
-        <div>
-            
+  return (
+    <div>
+      <div className="lg:flex   justify-between bg-primary m-6 p-6 ">
+        <div className=" ">
+          <h1 className="lg:text-5xl text-3xl  font-bold px-12  pt-12 pb-6">
+            WelCome To CryptoVest.
+          </h1>
+          <p className=" font-bold px-12 mt-8">
+            Top cryptocurrency prices and charts, listed by market
+            capitalization. Free access to current and historic data for Bitcoin
+            and thousands of altcoins.
+          </p>
         </div>
-    );
+        <div>
+          <img
+            className="lg:w-full w-96 "
+            src="https://i.ibb.co/VSV2LRQ/bitcoin-2007769-480.jpg"
+            alt="coin-img"
+          />
+        </div>
+      </div>
+
+      {/* second Part */}
+      <div
+        className="hero min-h-screen"
+        style={{
+          backgroundImage: `url("https://i.ibb.co/LhSF4Bt/MIT-Vault-Cryptocurrency.jpg")`,
+        }}
+      >
+        <div className="hero-overlay bg-opacity-20"></div>
+        <div className="hero-content text-center ">
+          <div className="max-w-full">
+            {/* <h1 className="mb-5 text-5xl font-bold">Hello there</h1> */}
+            <p className="mb-5 text-white">
+              A cryptocurrency is a digital currency, which is an alternative
+              form of payment created using encryption algorithms.
+                      </p> 
+                      {/* card -1 */}
+            <div className="flex justify-center gap-4">
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-300">
+                <h1>
+                  <BsFillShieldLockFill
+                    size="50px"
+                    className="text-white text-center bg-yellow-500 p-2 rounded-md mx-auto mb-6 hover:bg-yellow-600 "
+                  />
+                </h1>
+                <h1 className="text-xl font-semibold mb-4">VERIFY ACCOUNT</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
+                  nostrum, numquam ipsam quaerat natus odio eveniet dicta
+                  delectus architecto consequatur rem doloremque et, fugiat nemo
+                  velit voluptatum dolores explicabo ullam!
+                </p>
+                          </div>
+                          {/* card-2 */}
+              <div className=" shadow-2xl p-8 rounded-sm bg-yellow-500">
+                <h1>
+                  <BsFillShieldLockFill
+                    size="50px"
+                    className="text-yellow-500 text-center bg-white p-2 rounded-md mx-auto mb-6 "
+                  />
+                </h1>
+                <h1 className="text-xl font-semibold mb-4">VERIFY ACCOUNT</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
+                  nostrum, numquam ipsam quaerat natus odio eveniet dicta
+                  delectus architecto consequatur rem doloremque et, fugiat nemo
+                  velit voluptatum dolores explicabo ullam!
+                </p>
+                          </div>
+                          {/* card-3 */}
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-300">
+                <h1>
+                  <BsFillShieldLockFill
+                    size="50px"
+                    className="text-white text-center bg-yellow-500 p-2 rounded-md mx-auto mb-6 hover:bg-yellow-600 "
+                  />
+                </h1>
+                <h1 className="text-xl font-semibold mb-4">VERIFY ACCOUNT</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse
+                  nostrum, numquam ipsam quaerat natus odio eveniet dicta
+                  delectus architecto consequatur rem doloremque et, fugiat nemo
+                  velit voluptatum dolores explicabo ullam!
+                </p>
+              </div>
+            </div>
+            <button className="btn btn-primary mt-6">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default About;
