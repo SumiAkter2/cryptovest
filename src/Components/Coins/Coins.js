@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import useCoins from "../../Hooks/useCoins";
 import AllCoins from "./AllCoins";
 import Loading from "../Loading/Loading";
 
 const Coins = () => {
-  const [coins, search, setSearch] = useCoins();
+  const [coins, isLoading, setSearch] = useCoins();
   const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    console.log(search);
+    // console.log(search);
   };
-  const [isLoading] = useState(false);
+
   if (isLoading) {
     return <Loading />;
   }
-  console.log(coins);
+  // console.log(coins);
   return (
     <div className="overflow-x-auto">
+      <h1> coins</h1>
       <div className="flex justify-start">
         <form onSubmit={handleSearch} className="my-12 mx-6">
           <input

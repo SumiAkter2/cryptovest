@@ -18,7 +18,7 @@ const useCoins = () => {
 
         setCoins(match);
       });
-  }, [search]);
+  }, [search,setCoins]);
   return [coins, search, isLoading, setSearch];
 };
 export default useCoins;

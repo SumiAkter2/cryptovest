@@ -3,15 +3,13 @@ import { BsCart4 } from "react-icons/bs";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../App";
-import useCart from "../../Hooks/useCart";
-import useCoins from "../../Hooks/useCoins";
 
 const AllCoins = ({ coin, index }) => {
   const navigate = useNavigate();
   const addToCart = useContext(CartContext);
 
   return (
-    <tr className="hover:cursor-pointer">
+    <tr className="hover:cursor-pointer hover">
       <td>
         {index + 1}. {coin.id}
       </td>

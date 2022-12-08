@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getStorageItem } from "../utilities/LocalStorageDB";
 
 const useCart = (coins) => {
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     const storageCoin = getStorageItem();
     const addNewCart = [];

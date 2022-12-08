@@ -4,10 +4,10 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const Navbar = ({ children, cart }) => {
   const [dark, setDark] = useState(false);
-  // let quantity = 0;
-  // cart.forEach((coin) => {
-  //   quantity = quantity + coin.quantity;
-  // });
+  let quantity = 0;
+  cart.forEach((coin) => {
+    quantity = quantity + coin.quantity;
+  });
   return (
     <div data-theme={dark ? "dark" : "light"}>
       <div className="drawer drawer-end fixed top-0 ">
@@ -43,38 +43,29 @@ const Navbar = ({ children, cart }) => {
             <div className="flex-none hidden lg:block  ">
               <ul className="menu  menu-horizontal gap-x-2  ">
                 <li>
-                  <NavLink className="rounded-lg  text-accent my-2 " to="/">
+                  <NavLink className="rounded-lg my-2" to="/">
                     Home
                   </NavLink>
                 </li>
 
                 <li>
-                  <NavLink
-                    className="rounded-lg  my-2  text-accent"
-                    to="/coins"
-                  >
+                  <NavLink className="rounded-lg  my-2  " to="/coin">
                     Coins
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="rounded-lg  my-2  text-accent"
-                    to="/about"
-                  >
+                  <NavLink className="rounded-lg  my-2  " to="/about">
                     about
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink
-                    className="rounded-lg  my-2  text-accent"
-                    to="/carts"
-                  >
-                    <HiOutlineShoppingCart /> {cart.length}
+                  <NavLink className="rounded-lg  my-2  " to="/carts">
+                    <HiOutlineShoppingCart /> {quantity}
                   </NavLink>
                 </li>
                 {/* {user && (
                     <li>
-                      <NavLink className="rounded-lg  my-2  text-accent" to="/dashboard">
+                      <NavLink className="rounded-lg  my-2  " to="/dashboard">
                         Dashboard
                       </NavLink>
                     </li>
@@ -83,7 +74,7 @@ const Navbar = ({ children, cart }) => {
                     <>
                       <li>
                         <button
-                          className="bg-primary rounded-lg  my-2  text-accent"
+                          className="bg-primary rounded-lg  my-2  "
                           onClick={logout}
                         >
                           Sign Out
@@ -97,7 +88,7 @@ const Navbar = ({ children, cart }) => {
                     </>
                   ) : (
                     <li>
-                      <NavLink className="rounded-lg  my-2  text-accent" to="/login">
+                      <NavLink className="rounded-lg  my-2  " to="/login">
                         Log In
                       </NavLink>
                     </li>
@@ -135,22 +126,22 @@ const Navbar = ({ children, cart }) => {
           <label for="  my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-2 overflow-y-auto w-80 bg-base-100">
             <li>
-              <NavLink className="rounded-lg  my-2  text-accent " to="/">
+              <NavLink className="rounded-lg  my-2   " to="/">
                 Home
               </NavLink>
             </li>
 
             <li>
-              <NavLink className="rounded-lg  my-2  text-accent" to="/coins">
+              <NavLink className="rounded-lg  my-2  " to="/coin">
                 Coins
               </NavLink>
             </li>
             {/* {
-                            user && <li><NavLink className='rounded-lg  my-2  text-accent' to='/purchase'>Purchase</NavLink></li>
+                            user && <li><NavLink className='rounded-lg  my-2  ' to='/purchase'>Purchase</NavLink></li>
                         } */}
             {/* {user && (
                 <li>
-                  <NavLink className="rounded-lg  my-2  text-accent" to="/dashboard">
+                  <NavLink className="rounded-lg  my-2  " to="/dashboard">
                     Dashboard
                   </NavLink>
                 </li>
@@ -159,7 +150,7 @@ const Navbar = ({ children, cart }) => {
               {user ? (
                 <li>
                   <button
-                    className="bg-primary rounded-lg  my-2  text-accent"
+                    className="bg-primary rounded-lg  my-2  "
                     onClick={logout}
                   >
                     Sign Out
@@ -167,7 +158,7 @@ const Navbar = ({ children, cart }) => {
                 </li>
               ) : (
                 <li>
-                  <NavLink className="rounded-lg  my-2  text-accent" to="/login">
+                  <NavLink className="rounded-lg  my-2  " to="/login">
                     Log In
                   </NavLink>
                 </li>
