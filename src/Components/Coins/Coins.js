@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useCoins from "../../Hooks/useCoins";
 import AllCoins from "./AllCoins";
 import Loading from "../Loading/Loading";
 
 const Coins = () => {
-  const [coins, isLoading, setSearch] = useCoins();
+  const [coins,setCoins] = useCoins();
+   const [searchedText, setSearchedText] = useState("");
+
+   useEffect(() => {
+     // setIsLoading(true)
+     fetch(
+       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
+     )
+       .then((res) => res.json())
+       .then((data) => {
+         // console.log(data);
+         const match = data.filter(
+           (coin) =>
+             coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||
+             coin.symbol.toLowerCase().includes(searchedText.toLowerCase())
+         );
+         setCoins(match);
+         // setIsLoading(false)
+       });
+   }, [searchedText,setCoins]);
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearch(e.target.value);
+    setSearchedText(e.target.value);
     // console.log(search);
   };
 
-  if (isLoading) {
-    return <Loading />;
-  }
-  // console.log(coins);
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
+  // // console.log(coins);
   return (
     <div className="overflow-x-auto">
       <h1> coins</h1>
@@ -25,7 +44,7 @@ const Coins = () => {
             type="text"
             name="text"
             placeholder="Search"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearchedText(e.target.value)}
           />
           <button className="btn btn-info  " type="submit">
             Enter

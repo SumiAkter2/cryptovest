@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DetailCart from "./DetailCart";
 import { BsArrowRight } from "react-icons/bs";
-const Carts = ({ cart }) => {
+import ReceptPage from "../ReceptPage/ReceptPage";
+const Carts = ({ cart, refetch }) => {
   return (
     <div>
       <div className="px-4 lg:px-20 mt-5 mb-12">
@@ -35,7 +36,7 @@ const Carts = ({ cart }) => {
                     <DetailCart
                       key={coin.id}
                       coin={coin}
-                      // refetch={refetch}
+                      refetch={refetch}
                     ></DetailCart>
                   ))}
                 </tbody>
@@ -47,8 +48,8 @@ const Carts = ({ cart }) => {
               <h1 className="text-3xl lg:text-5xl font-bold mb-6 opacity-70 text-info">
                 Receipt
               </h1>
-              <div className="p-5 bg-base-200 rounded-xl h-[420px]">
-                {/* {<Receipt cart={cart} refetch={refetch}></Receipt>} */}
+              <div className="p-5 bg-base-100 border rounded-xl h-[420px] shadow-2xl shadow-gray-700">
+                <ReceptPage cart={cart} refetch={refetch} />
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { QueryClient, QueryClientProvider,useQuery } from "react-query";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Carts from "./Components/Carts/Carts";
@@ -16,7 +17,7 @@ import { addToLocalStorage } from "./utilities/LocalStorageDB";
 export const CartContext = createContext("");
 
 function App() {
-  const [coin, isLoading] = useCoins();
+  const [coin, isLoading, refetch] = useCoins();
   const [cart, setCart] = useCart(coin);
   let newCart = [];
   const addToCart = (selectedCoin) => {
@@ -32,25 +33,35 @@ function App() {
     }
     setCart(newCart);
     addToLocalStorage(selectedCoin.id);
+    refetch();
   };
   if (isLoading) {
     return <Loading />;
   }
+  
   return (
-    <CartContext.Provider value={addToCart}>
-      <div className="App">
-        <Navbar cart={cart}>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/coin" element={<Coins />}></Route>
-            <Route path="/detail/:id" element={<DetailCoin />}></Route>
-            <Route path="/carts" element={<Carts cart={cart} />}></Route>
-            <Route path="*" element={<NotFound />}></Route>
-          </Routes>
-          <Footer />
-        </Navbar>
-      </div>
-    </CartContext.Provider>
+   
+      <CartContext.Provider value={addToCart}>
+        <div className="App">
+          <Navbar cart={cart}>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+
+              <Route path="/coin" element={<Coins />}></Route>
+
+              <Route path="/detail/:id" element={<DetailCoin />}></Route>
+              <Route
+                path="/carts"
+                element={<Carts cart={cart} refetch={refetch} />}
+              ></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Routes>
+            <Footer />
+          </Navbar>
+        </div>
+      </CartContext.Provider>
+    
+   
   );
 }
 

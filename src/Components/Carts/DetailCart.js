@@ -1,22 +1,44 @@
 import React from "react";
+import swal from "sweetalert";
 import { TiDeleteOutline } from "react-icons/ti";
 import {
   removeItem,
   minusItem,
   addToLocalStorage,
 } from "../../utilities/LocalStorageDB";
+
 const DetailCart = ({ coin, refetch }) => {
   const total = coin.current_price * coin.quantity;
-  const handleRemove = () => {
-    removeItem(coin.id);
-    refetch();
-  };
+
   const MinusItem = () => {
+    console.log("minus");
+    swal({ icon: "warning", text: " One quantity is decrease !" });
     minusItem(coin.id);
     refetch();
   };
   const AddItem = () => {
+    swal({ icon: "success", text: " Successfully added item." });
     addToLocalStorage(coin.id);
+    refetch();
+  };
+  const handleRemove = () => {
+    swal({
+      title: "Are you sure to delete?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your item has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your item is safe!");
+      }
+    });
+
+    removeItem(coin.id);
     refetch();
   };
   return (
@@ -45,7 +67,7 @@ const DetailCart = ({ coin, refetch }) => {
       <td>
         <button
           className="opacity-50 hover:opacity-100 hover:text-red-500 duration-300 ease-in"
-          onClick={() => handleRemove}
+          onClick={handleRemove}
         >
           <TiDeleteOutline className="text-4xl" />
         </button>
