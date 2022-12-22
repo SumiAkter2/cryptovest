@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
+
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Carts from "./Components/Carts/Carts";
@@ -13,6 +14,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import useCart from "./Hooks/useCart";
 import useCoins from "./Hooks/useCoins";
 import { addToLocalStorage } from "./utilities/LocalStorageDB";
+
 
 export const CartContext = createContext("");
 
@@ -38,6 +40,8 @@ function App() {
   if (isLoading) {
     return <Loading />;
   }
+
+  <script>AOS.init();</script>;
 
   return (
     <CartContext.Provider value={addToCart}>

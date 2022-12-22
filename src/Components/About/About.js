@@ -37,13 +37,13 @@ const About = () => {
         <div className="hero-content text-center ">
           <div className="max-w-full">
             {/* <h1 className="mb-5 text-5xl font-bold">Hello there</h1> */}
-            <p className="mb-12 text-lg text-white">
+            <p className="mb-12 lg:text-xl font-bold text-primary">
               A cryptocurrency is a digital currency, which is an alternative
               form of payment created using encryption algorithms.
             </p>
             {/* card -1 */}
             <div className="lg:flex justify-center gap-4 text-gray-800">
-              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-400">
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-500 mb-5 text-yellow-500">
                 <h1>
                   <MdOutlinePayments
                     size="50px"
@@ -59,7 +59,7 @@ const About = () => {
                 </p>
               </div>
               {/* card-2 */}
-              <div className=" shadow-2xl p-8 rounded-sm bg-yellow-500 hover:bg-yellow-300">
+              <div className=" shadow-2xl p-8 rounded-sm bg-yellow-500 hover:bg-yellow-300 mb-5 ">
                 <h1>
                   <BsFillShieldLockFill
                     size="50px"
@@ -75,7 +75,7 @@ const About = () => {
                 </p>
               </div>
               {/* card-3 */}
-              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-400">
+              <div className="bg-primary shadow-2xl p-8 rounded-sm hover:bg-gray-500 mb-5 text-yellow-500">
                 <h1>
                   <RiMoneyDollarBoxFill
                     size="50px"
@@ -98,7 +98,7 @@ const About = () => {
         </div>
       </div>
       {/* third part */}
-      <Teams />
+      {/* <Teams /> */}
     </div>
   );
 };

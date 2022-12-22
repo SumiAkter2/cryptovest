@@ -4,11 +4,17 @@ import AllCoins from "./AllCoins";
 import Loading from "../Loading/Loading";
 
 const Coins = () => {
-  const [coins, setCoins] = useCoins();
+  const [coins, setCoins, isLoading] = useCoins();
+
   const [searchedText, setSearchedText] = useState("");
 
+  if (coins) {
+    coins.length = 3;
+  }
+  // if (isLoading) {
+  //   return <p>jjj</p>
+  // }
   useEffect(() => {
-    // setIsLoading(true)
     fetch(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
     )
