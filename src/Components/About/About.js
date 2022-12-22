@@ -6,7 +6,7 @@ import Teams from "./Teams";
 const About = () => {
   return (
     <div>
-      <section className="card lg:card-side lg:h-96 bg-base-100 shadow-xl my-6 mx-12">
+      <section className="card lg:card-side lg:h-96 bg-base-100 shadow-xl my-6 mx-12 ">
         <figure className="mx-6">
           <img
             className="lg:w-full w-96 rounded-lg mt-6"
@@ -26,15 +26,7 @@ const About = () => {
           <div className="card-actions justify-end"></div>
         </div>
       </section>
-      {/* <div className="lg:flex   justify-between bg-primary p-6 ">
-        <div className=" ">
-         
-         
-        </div>
-        <div>
-          
-        </div>
-      </div> */}
+     
 
       {/* second Part */}
       <div

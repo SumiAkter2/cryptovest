@@ -9,7 +9,7 @@ const Coins = () => {
   const [searchedText, setSearchedText] = useState("");
 
   if (coins) {
-    coins.length = 3;
+    coins.length = 6;
   }
   // if (isLoading) {
   //   return <p>jjj</p>
@@ -26,7 +26,7 @@ const Coins = () => {
             coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||
             coin.symbol.toLowerCase().includes(searchedText.toLowerCase())
         );
-        setCoins(match);
+        // setCoins(match);
         // setIsLoading(false)
       });
   }, [searchedText, setCoins]);

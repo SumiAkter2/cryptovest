@@ -3,6 +3,7 @@ import Coins from "../Coins/Coins";
 import Testimonial from "../Testimonial/Testimonial";
 
 import Banner from "./Banner";
+import CurrencyConvert from "./CurrencyConvert";
 import Info from "./Info";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     <div>
       <Banner />
       <Info />
+      <CurrencyConvert/>
       <Testimonial />
       <Coins />
     </div>
