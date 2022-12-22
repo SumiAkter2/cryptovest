@@ -6,25 +6,35 @@ import Teams from "./Teams";
 const About = () => {
   return (
     <div>
-      <div className="lg:flex   justify-between bg-primary p-6 ">
-        <div className=" ">
+      <section className="card lg:card-side lg:h-96 bg-base-100 shadow-xl my-6 mx-12">
+        <figure className="mx-6">
+          <img
+            className="lg:w-full w-96 rounded-lg mt-6"
+            src="https://i.ibb.co/VSV2LRQ/bitcoin-2007769-480.jpg"
+            alt="coin-img"
+          />
+        </figure>
+        <div className="card-body">
           <h1 className="lg:text-5xl text-3xl  font-bold px-12  pt-12 pb-6">
             WelCome To CryptoVest.
           </h1>
-          <p className=" font-bold px-12 mt-8">
+          <p className=" font-bold px-12 mt-6">
             Top cryptocurrency prices and charts, listed by market
             capitalization. Free access to current and historic data for Bitcoin
             and thousands of altcoins.
           </p>
+          <div className="card-actions justify-end"></div>
+        </div>
+      </section>
+      {/* <div className="lg:flex   justify-between bg-primary p-6 ">
+        <div className=" ">
+         
+         
         </div>
         <div>
-          <img
-            className="lg:w-full w-96 "
-            src="https://i.ibb.co/VSV2LRQ/bitcoin-2007769-480.jpg"
-            alt="coin-img"
-          />
+          
         </div>
-      </div>
+      </div> */}
 
       {/* second Part */}
       <div
