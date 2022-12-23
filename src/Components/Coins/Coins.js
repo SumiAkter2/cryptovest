@@ -5,22 +5,18 @@ import Loading from "../Loading/Loading";
 
 const Coins = () => {
   const [coins, setCoins, isLoading] = useCoins();
-
   const [searchedText, setSearchedText] = useState("");
 
   if (coins) {
     coins.length = 6;
   }
-  // if (isLoading) {
-  //   return <p>jjj</p>
-  // }
+
   useEffect(() => {
     fetch(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
     )
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         const match = data.filter(
           (coin) =>
             coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||

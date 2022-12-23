@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import "./Coin.css";
-import Coins from "./Coins";
+
+import CoinsCard from "./CoinsCard";
 const Coin = () => {
   return (
     <div>
@@ -32,7 +33,7 @@ const Coin = () => {
           />
         </div>
       </div>
-      <Coins />
+      <CoinsCard />
     </div>
   );
 };

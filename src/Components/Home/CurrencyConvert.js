@@ -7,14 +7,13 @@ const CurrencyConvert = () => {
   const [coins] = useCoins();
   const [amount, setAmount] = useState(0);
   const [to, setTo] = useState("");
-  const [from, setFrom] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let amount = e.target.id.value;
     const from = e.target.from.value;
     const to = e.target.to.value;
-    setFrom(from);
+
     setTo(to);
     if (coins) {
       coins.length = 1;
@@ -25,7 +24,6 @@ const CurrencyConvert = () => {
       coins.forEach(async (coin) => {
         amount = await multiFunction(amount, coin.current_price);
         setAmount(amount);
-        return console.log(amount, coin.current_price);
       });
     }
     // for euro and bitcoin
@@ -33,29 +31,21 @@ const CurrencyConvert = () => {
       amount = amount * 15866.19;
       setAmount(amount);
     }
-    //for et
-    //     if (coins && from === "Ethereum" && to === "USD") {
-    //       coins.length = 2;
-    //       console.log(coins.length);
-    //  coins.forEach(async (coin) => {
-    //         amount = await multiFunction(amount, coin.current_price);
-    //         setAmount(amount);
-    //         return console.log(amount);
-    //       });
-    //     }
+
     console.log(amount, from, to);
   };
 
   return (
     <div>
       <div
-        className="hero min-h-screen opacity-75 "
+        className="hero min-h-screen  "
         style={{
           backgroundImage: `url("https://i.ibb.co/pd9XtqF/bitcoin-cryptocurrency-gty-jt-220628-1656447281911-hp-Main-16x9-1600.jpg")`,
         }}
       >
         <div className="mx-6  text-white">
-          <div className="">
+          <div className=" opacity-100 blur-sm "></div>
+          <div>
             <h1 className="mb-12 text-5xl font-bold text-info">
               Cryptocurrency Calculator For Any Kind Of Currency
             </h1>
@@ -106,11 +96,14 @@ const CurrencyConvert = () => {
                   <option>EURO</option>
                 </select>
               </div>
-              <button type="submit" className="btn  text-white mt-8 lg:ml-12 ">
+              <button
+                type="submit"
+                className="btn bg-white btn-info  btn-outline my-3 duration-300 ease-in  mt-12 lg:ml-12 "
+              >
                 <SiConvertio className="mr-2" /> Convert
               </button>
             </form>
-            <h1 className="text-3xl  my-4">
+            <h1 className="text-3xl  mt-4">
               {amount ? amount : "0 "}
               <span className="text-xl "> {to} </span>
             </h1>

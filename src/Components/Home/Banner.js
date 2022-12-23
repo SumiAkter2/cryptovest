@@ -24,7 +24,7 @@ const Banner = () => {
         spaceBetween={20}
         slidesPerView={1}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => console.log("swiper")}
         className="mySwiper"
       >
         <SwiperSlide
@@ -33,7 +33,7 @@ const Banner = () => {
             backgroundImage: 'url("https://i.ibb.co/XYFgBdP/bg3.jpg")',
           }}
         >
-          <div className="slider-text  text-info ">
+          <div className="slider-text  text-white font-serif text-center">
             <div>
               <h1 className="lg:text-5xl text-3xl py-5">
                 Get The Ultimate Profit From The Bit Coin
@@ -51,7 +51,7 @@ const Banner = () => {
               'url(" https://i.ibb.co/dp8WWt7/adobestock-513059759-editorial-use-only.jpg")',
           }}
         >
-          <div className="slider-text  text-info ">
+          <div className="slider-text  text-info font-serif">
             <div>
               <h1 className="lg:text-5xl text-3xl py-5">
                 Join Future Of Algorithmic Crypto Trading Strategies
@@ -68,7 +68,7 @@ const Banner = () => {
             backgroundImage: 'url("https://i.ibb.co/t4b7Fy0/xrp-1.jpg")',
           }}
         >
-          <div className="slider-text  text-info ">
+          <div className="slider-text  text-white font-serif ">
             <div>
               <h1 className="lg:text-5xl text-3xl py-5">
                 The crypto trading app for the next-gen
