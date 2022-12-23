@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import { CartContext } from "../../App";
 
 const AllCoins = ({ coin, index }) => {

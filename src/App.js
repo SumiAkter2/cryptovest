@@ -14,7 +14,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import useCart from "./Hooks/useCart";
 import useCoins from "./Hooks/useCoins";
 import { addToLocalStorage } from "./utilities/LocalStorageDB";
-
+import swal from "sweetalert";
 
 export const CartContext = createContext("");
 
@@ -36,6 +36,11 @@ function App() {
     setCart(newCart);
     addToLocalStorage(selectedCoin.id);
     refetch();
+
+    swal({
+      icon: "success",
+      text: "Added Successfully",
+    });
   };
   if (isLoading) {
     return <Loading />;

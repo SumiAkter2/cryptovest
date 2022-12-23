@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import "./Coin.css";
-
 import CoinsCard from "./CoinsCard";
+
 const Coin = () => {
   return (
     <div>

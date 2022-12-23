@@ -30,6 +30,8 @@ const DetailCart = ({ coin, refetch }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
+        removeItem(coin.id);
+        refetch();
         swal("Poof! Your item has been deleted!", {
           icon: "success",
         });
@@ -37,9 +39,6 @@ const DetailCart = ({ coin, refetch }) => {
         swal("Your item is safe!");
       }
     });
-
-    removeItem(coin.id);
-    refetch();
   };
   return (
     <tr className="hover ">

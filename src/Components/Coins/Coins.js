@@ -4,38 +4,33 @@ import AllCoins from "./AllCoins";
 import Loading from "../Loading/Loading";
 
 const Coins = () => {
-  const [coins, setCoins, isLoading] = useCoins();
+  const [coins, setCoins] = useState([]);
   const [searchedText, setSearchedText] = useState("");
-
   if (coins) {
     coins.length = 6;
   }
-
   useEffect(() => {
     fetch(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
     )
       .then((res) => res.json())
       .then((data) => {
-        const match = data.filter(
+        const search = data.filter(
           (coin) =>
             coin.name.toLowerCase().includes(searchedText.toLowerCase()) ||
             coin.symbol.toLowerCase().includes(searchedText.toLowerCase())
         );
-        // setCoins(match);
-        // setIsLoading(false)
+        setCoins(search);
       });
-  }, [searchedText, setCoins]);
+  }, [searchedText]);
+  // "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
+
   const handleSearch = (e) => {
     e.preventDefault();
     setSearchedText(e.target.value);
-    // console.log(search);
+    console.log(searchedText);
   };
 
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
-  // // console.log(coins);
   return (
     <div className="overflow-x-auto">
       <div className="flex justify-start">
