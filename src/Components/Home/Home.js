@@ -5,13 +5,16 @@ import Testimonial from "../Testimonial/Testimonial";
 import Banner from "./Banner";
 import CurrencyConvert from "./CurrencyConvert";
 import Info from "./Info";
+import Success from "./Success/Success";
 
 const Home = () => {
   return (
     <div>
       <Banner />
+
+      <CurrencyConvert />
       <Info />
-      <CurrencyConvert/>
+      <Success />
       <Testimonial />
       <Coins />
     </div>
