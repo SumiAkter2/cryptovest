@@ -6,21 +6,43 @@ import useCoins from "../../Hooks/useCoins";
 const CurrencyConvert = () => {
   const [coins] = useCoins();
   const [amount, setAmount] = useState(0);
+  const [to, setTo] = useState("");
+  const [from, setFrom] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let amount = e.target.id.value;
     const from = e.target.from.value;
     const to = e.target.to.value;
-    console.log(coins.current_price);
-    coins.forEach((c) => {
-      console.log(c.current_price);
-      if (amount) {
-        amount = amount * parseInt(c.current_price);
-        return setAmount(amount);
-      }
-    });
-
+    setFrom(from);
+    setTo(to);
+    if (coins) {
+      coins.length = 1;
+    }
+    const multiFunction = async (a, b) => a * b;
+    // for usd and bitcoin
+    if (coins && from === "Bit" && to === "USD") {
+      coins.forEach(async (coin) => {
+        amount = await multiFunction(amount, coin.current_price);
+        setAmount(amount);
+        return console.log(amount, coin.current_price);
+      });
+    }
+    // for euro and bitcoin
+    if (coins && from === "Bit" && to === "EURO") {
+      amount = amount * 15866.19;
+      setAmount(amount);
+    }
+    //for et
+    //     if (coins && from === "Ethereum" && to === "USD") {
+    //       coins.length = 2;
+    //       console.log(coins.length);
+    //  coins.forEach(async (coin) => {
+    //         amount = await multiFunction(amount, coin.current_price);
+    //         setAmount(amount);
+    //         return console.log(amount);
+    //       });
+    //     }
     console.log(amount, from, to);
   };
 
@@ -64,9 +86,9 @@ const CurrencyConvert = () => {
                   className="select text-black select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
                   <option selected>Bit</option>
-                  <option>Ethereum</option>
+                  {/* <option>Ethereum</option>
                   <option>Tether</option>
-                  <option>binancecoin</option>
+                  <option>Binancecoin</option> */}
                 </select>
               </div>
               <div>
@@ -80,16 +102,18 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   className="select text-black select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
-                  <option selected>USA</option>
+                  <option selected>USD</option>
                   <option>EURO</option>
-                  <option>Italian</option>
                 </select>
               </div>
               <button type="submit" className="btn  text-white mt-8 lg:ml-12 ">
                 <SiConvertio className="mr-2" /> Convert
               </button>
             </form>
-            <p> ffff {amount}</p>
+            <h1 className="text-3xl  my-4">
+              {amount ? amount : "0 "}
+              <span className="text-xl "> {to} </span>
+            </h1>
           </div>
         </div>
       </div>
