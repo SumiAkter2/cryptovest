@@ -11,14 +11,15 @@ const DetailCart = ({ coin, refetch }) => {
   const total = coin.current_price * coin.quantity;
 
   const MinusItem = () => {
-    console.log("minus");
-    swal({ icon: "warning", text: " One quantity is decrease !" });
     minusItem(coin.id);
+    swal({ icon: "warning", text: " One quantity is decrease !" });
+
     refetch();
   };
   const AddItem = () => {
-    swal({ icon: "success", text: " Successfully added item." });
     addToLocalStorage(coin.id);
+    swal({ icon: "success", text: " Successfully added item." });
+
     refetch();
   };
   const handleRemove = () => {
@@ -31,7 +32,7 @@ const DetailCart = ({ coin, refetch }) => {
     }).then((willDelete) => {
       if (willDelete) {
         removeItem(coin.id);
-        refetch();
+
         swal("Poof! Your item has been deleted!", {
           icon: "success",
         });
@@ -39,7 +40,9 @@ const DetailCart = ({ coin, refetch }) => {
         swal("Your item is safe!");
       }
     });
+    refetch();
   };
+
   return (
     <tr className="hover ">
       <td className="text-left">

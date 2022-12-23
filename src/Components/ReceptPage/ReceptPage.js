@@ -24,6 +24,8 @@ const ReceptPage = ({ cart, refetch }) => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
+        deleteCart();
+
         swal("All item has been deleted!", {
           icon: "success",
         });
@@ -31,9 +33,9 @@ const ReceptPage = ({ cart, refetch }) => {
         swal("Your item is safe!");
       }
     });
-    deleteCart();
     refetch();
   };
+
   return (
     <div>
       <h1 className="text-xl flex justify-between mb-6 text-info">

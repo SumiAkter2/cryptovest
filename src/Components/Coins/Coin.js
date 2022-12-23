@@ -15,7 +15,7 @@ const Coin = () => {
           <p className="text-primary font-bold px-12">
             Top cryptocurrency prices and charts, listed by market
             capitalization. Free access to current and historic data for Bitcoin
-            and thousands of altcoins.
+            and thousands of alt coins.
           </p>
           <button className="btn btn-primary btn-outline my-5 mx-12 duration-300 ease-in ">
             <Link to="/">

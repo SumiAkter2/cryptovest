@@ -4,6 +4,8 @@ import img1 from "../../img/businessman1.jpg";
 import img2 from "../../img/businessman2.jpg";
 import img3 from "../../img/businessman3.jpg";
 import img4 from "../../img/businessman4.jpg";
+import { FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
 const Testimonial = () => {
   const testimonial = [
     {
@@ -45,10 +47,21 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-12 mt-6">
-      {testimonial.map((t) => (
-        <TestimonialDetail key={t.id} t={t} />
-      ))}
+    <div>
+      <div className="flex justify-center items-start mt-12 mb-16">
+        <h1>
+          <FaQuoteLeft color="skyBlue" />
+        </h1>
+        <h1 className="text-center text-4xl text-info mx-4">Our Client Say</h1>
+        <h1>
+          <FaQuoteRight color="skyBlue" />
+        </h1>
+      </div>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-12 mt-6">
+        {testimonial.map((t) => (
+          <TestimonialDetail key={t.id} t={t} />
+        ))}
+      </div>
     </div>
   );
 };

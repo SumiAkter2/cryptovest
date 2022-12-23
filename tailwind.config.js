@@ -8,7 +8,7 @@ module.exports = {
         light: {
           primary: "#e5e7eb",
           secondary: "#bae6fd",
-          accent: "#374151", // Navbar backGround Color
+          accent: "#999fa8", // Navbar backGround Color
           neutral: "#37CDBE", // Navbar text
           "base-100": "#ffffff",
           info: "#0ea5e9",
