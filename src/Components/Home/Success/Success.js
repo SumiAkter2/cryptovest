@@ -1,18 +1,23 @@
 import React from "react";
 import { GiWallet } from "react-icons/gi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { AiFillDollarCircle } from "react-icons/ai";
+import { BiTransfer } from "react-icons/bi";
+import img from "../../../img/depositphotos_152853602-stock-photo-bitcoin-coin-l-on-laptop.jpg";
+import CountUp from "react-countup";
 import "./Success.css";
 const Success = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen "
-        style={{
-          backgroundImage: `url("https://i.ibb.co/5jD6k9f/Types-of-Cryptocurrency.jpg")`,
-        }}
+        className="hero min-h-screen success-content"
+        // style={{
+        //   backgroundImage: `url(${img})`,
+        // }}
       >
         <div className="mx-6  text-white ">
           <div className=" opacity-50  "></div>
-          <div className="text-center">
+          <div className="text-center success">
             <h1 className="mb-12 text-5xl font-bold text-white">Our Success</h1>
             <p className="my-8 text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
@@ -21,31 +26,40 @@ const Success = () => {
               quibusdam voluptate qui!
             </p>
 
-            <div className="grid lg:grid-cols-4 md:grid-cols-2">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 ">
               <div>
                 <h1 className="text-5xl font-bold  flex justify-center items-center">
-                  <GiWallet color="yellow" className="mr-2 " /> 10K
+                  <GiWallet color="yellow" className="mr-2 " />
+                  <CountUp delay={2} duration={1.75} start={0} end={10} />K
                 </h1>
                 <span className="text-sm font-bold">WALLET USERS</span>
               </div>
+              <div>
+                <h1 className="text-5xl font-bold  flex justify-center items-center">
+                  <BsFillPersonFill color="yellow" className="mr-2 " />
+                  <CountUp delay={2} duration={1.75} start={0} end={80} />K
+                </h1>
+                <span className="text-sm font-bold">ONLINE CONSULTANTS</span>
+              </div>
+              <div>
+                <h1 className="text-5xl font-bold  flex justify-center items-center">
+                  <BiTransfer color="yellow" className="mr-2 " />
+                  <CountUp delay={2} duration={1.75} start={0} end={30} />
+                </h1>
+                <span className="text-sm font-bold">DAILY TRANSACTIONS</span>
+              </div>
+              <div>
+                <h1 className="text-5xl font-bold  flex justify-center items-center">
+                  <AiFillDollarCircle color="yellow" className="mr-2 " />
+                  <CountUp delay={2} duration={1.75} start={0} end={210} />
+                </h1>
+                <span className="text-sm font-bold">TOTAL TRANSACTIONS</span>
+              </div>
             </div>
-            <button
-              type="submit"
-              className="btn bg-white btn-info  btn-outline my-3 duration-300 ease-in  mt-12 lg:ml-12 "
-            >
-              fgggg
-              {/* <SiConvertio className="mr-2" /> Convert */}
-            </button>
-            {/* </form> */}
-            <h1 className="text-3xl  mt-4">
-              {/* {amount ? amount : "0 "} */}
-              {/* <span className="text-xl "> {to} </span> */}
-            </h1>
           </div>
         </div>
       </div>
     </div>
-    // "url('https://i.ibb.co/5jD6k9f/Types-of-Cryptocurrency.jpg')",backgroundSize:'cover'
   );
 };
 
