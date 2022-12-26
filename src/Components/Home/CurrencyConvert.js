@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
+import img from '../../img/bitc.png'
 import { SiConvertio } from "react-icons/si";
 import useCoins from "../../Hooks/useCoins";
-
+import  './Convert.css';
 const CurrencyConvert = () => {
   const [coins] = useCoins();
   const [amount, setAmount] = useState(0);
@@ -38,14 +39,14 @@ const CurrencyConvert = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen  "
+        className="hero min-h-screen  convert-container"
         style={{
-          backgroundImage: `url("https://i.ibb.co/pd9XtqF/bitcoin-cryptocurrency-gty-jt-220628-1656447281911-hp-Main-16x9-1600.jpg")`,
+          backgroundImage: `url("https://i.ibb.co/jkfXFTD/bitcoin-3132574-340.jpg")`,
         }}
       >
         <div className="mx-6  text-white">
-          <div className=" opacity-100 blur-sm "></div>
-          <div className="">
+          {/* <div className=" opacity-100  "></div> */}
+          <div className="convert-content">
             <h1 className="mb-12 text-5xl font-bold text-white">
               Cryptocurrency Calculator For Any Kind Of Currency
             </h1>

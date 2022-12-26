@@ -2,10 +2,10 @@ import React from "react";
 import './Testimonial.css'
 const TestimonialDetail = ({ t }) => {
   return (
-    <div className="card lg:max-w-lg bg-accent shadow-xl testimonial mb-12">
+    <div className="card lg:max-w-lg shadow-xl testimonial mb-12">
       <div className="flex justify-center items-center ">
         <div className="avatar  mt-4 ">
-          <div className="w-20 rounded-full ring ring-info  ring-offset-base-100 ring-offset-2">
+          <div className="w-20 rounded-full ring ring-neutral  ring-offset-base-100 ring-offset-2">
             <img src={t.img} alt="man-img" />
           </div>
         </div>
@@ -20,7 +20,7 @@ const TestimonialDetail = ({ t }) => {
           <div className="badge badge-sm"></div>
           <div className="badge badge-sm"></div>
           <div className="badge badge-sm"></div>
-          {/* <div className="badge badge-xs"></div> */}
+         
         </div>
       </div>
     </div>

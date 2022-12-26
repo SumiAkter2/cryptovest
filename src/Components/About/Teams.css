@@ -21,6 +21,6 @@
 }
 
 .cards:hover .cards-body{
-   background-color: rgb(158, 204, 221);
-   
+background: rgb(135, 135, 135);
+   color: #fff;
 }

@@ -1,0 +1,11 @@
+.convert-container{
+background-attachment: fixed;
+background-size: cover;
+background-blend-mode: overlay;
+background-position: center;
+}
+.convert-content{
+backdrop-filter: blur(5px);
+padding: 40px 20px;
+    margin: 20px;
+}

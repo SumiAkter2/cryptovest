@@ -1,7 +1,8 @@
-/* .testimonial{
-color: rgb(251, 249, 249);
-} */
+.testimonial{
+    color: #000;
+    background-color: rgba(203, 202, 202, 0.722);
+}
 .testimonial:hover{
 background: rgb(114, 114, 114);
-
+color: rgb(251, 249, 249);
 }
