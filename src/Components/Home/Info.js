@@ -10,8 +10,8 @@ const Info = () => {
           alt="img"
         />
         <div className="text-left">
-          <h1 className="text-5xl font-bold text-info">
-            What is cryptocurrency?
+          <h1 className="text-5xl font-semibold text-info">
+            What is cryptocurrency ?
           </h1>
           <div className="divider w-8/12"></div>
           <p className="py-4">

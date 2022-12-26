@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import LogIn from '../Log In/LogIn';
+import LogIn from "../Log In/LogIn";
 const Navbar = ({ children, cart }) => {
   const [dark, setDark] = useState(false);
   let quantity = 0;
@@ -65,9 +65,7 @@ const Navbar = ({ children, cart }) => {
                 </li>
                 <li>
                   <label htmlFor="my-modal-6" className="rounded-lg  my-2">
-                    {/* <NavLink className="rounded-lg  my-2 btn " to="/login"> */}
                     Log In/Sign Up
-                    {/* </NavLink> */}
                   </label>
                 </li>
                 <li>
@@ -196,21 +194,15 @@ const Navbar = ({ children, cart }) => {
       {/* +++++++++++++++++++++++++++++++++++++++++++++++++ */}
       <div>
         <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-        <div className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
-            <LogIn/>
-            {/* <h3 className="font-bold text-lg">
-              Congratulations random Internet user!
-            </h3>
-            <p className="py-4">
-              You've been selected for a chance to get one year of subscription
-              to use Wikipedia for free!
-            </p> */}
-            <div className="modal-action">
-              <label htmlFor="my-modal-6" className="btn">
-                Yay!
-              </label>
-            </div>
+        <div className="modal modal-bottom sm:modal-middle ">
+          <div className="modal-box bg-slate-300">
+            <label
+              htmlFor="my-modal-6"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <LogIn />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import Contact from "./Components/Contact/Contact";
 import LogIn from "./Components/Log In/LogIn";
+import SignUp from "./Components/Log In/SignUp";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Carts from "./Components/Carts/Carts";
@@ -63,7 +64,8 @@ function App() {
             ></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/login" element={<LogIn />}></Route>
+            {/* <Route path="/login" element={<LogIn />}></Route> */}
+            {/* <Route path="/signup" element={<SignUp />}></Route> */}
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />
