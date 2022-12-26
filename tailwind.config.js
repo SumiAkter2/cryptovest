@@ -14,7 +14,7 @@ module.exports = {
           info: "#0ea5e9",
           success: "#d1d5db", // backGround color
           warning: "#1B1821", // button color
-          error: "#dc2626",
+          error: "red",
         },
       },
       {
@@ -27,7 +27,7 @@ module.exports = {
           // info: "#4a4b4c",
           success: "#4b5563",
           warning: "#fcfafa",
-          error: "#be123c",
+          error: "red",
         },
       },
     ],
