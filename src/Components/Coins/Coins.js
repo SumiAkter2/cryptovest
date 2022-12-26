@@ -32,9 +32,9 @@ const Coins = () => {
   };
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto bg-primary pb-6">
       <h1 className="text-center text-5xl mt-12  text-neutral ">
-        {" "}
+      
         Digital Coins
       </h1>
       <div className="text-center text-neutral text-2xl ">...</div>

@@ -8,27 +8,27 @@ import { FaTwitter } from "react-icons/fa";
 import { RiSkypeFill } from "react-icons/ri";
 
 const Teams = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  //   useEffect(() => {
+  //     AOS.init();
+  //   }, []);
   return (
-    <div className="p-5 bg-primary">
-      <h1 className="text-center font-bold my-12 text-3xl ">
-        Our Team Members
+    <div className="p-5 bg-primary ">
+      <h1 className="text-center pb-6 my-12 text-4xl text-neutral">
+        Our Executive Members
       </h1>
       <div className="gap-12 mx-auto  my-8 lg:flex  justify-center items-center ">
-        <div>
-          <div className="card mx-auto">
+        <div className="">
+          <div className="cards mx-auto rounded-lg">
             <img
               src="https://i.ibb.co/rHHJGXH/women2.jpg"
-              className="card-img-top"
+              className="cards-img-top rounded-tr-2xl rounded-bl-2xl"
               alt="man-img"
             />
-
-            <div className="card-body bg-color">
-              <h5 className="card-title font-bold">Mr. Omar Prokash</h5>
-              <p className="card-text">CEO</p>
-              <p className="flex gap-6  items-center justify-start">
+            <div className="cards-footer mt-2 "></div>
+            <div className="cards-body bg-color ">
+              <h5 className="cards-title font-bold">Mr. Omar Prokash</h5>
+              <p className="cards-text">CEO</p>
+              <p className="flex gap-6 mt-6 items-center justify-start">
                 <FaFacebook
                   size="25px"
                   className="hover:text-white cursor-pointer "
@@ -50,17 +50,17 @@ const Teams = () => {
           </div>
         </div>
         <div>
-          <div className="card mx-auto">
+          <div className="cards mx-auto">
             <img
               src="https://i.ibb.co/KhtfYz6/women1.jpg"
-              className="card-img-top"
+              className="cards-img-top rounded-tr-2xl rounded-bl-2xl"
               alt="man-img"
             />
-
-            <div className="card-body bg-color">
-              <h5 className="card-title font-bold">Maria Kour</h5>
-              <p className="card-text">Director</p>
-              <p className="flex gap-6  items-center justify-start">
+            <div className="cards-footer mt-2"></div>
+            <div className="cards-body bg-color">
+              <h5 className="cards-title font-bold">Maria Kour</h5>
+              <p className="cards-text">Director</p>
+              <p className="flex gap-6 mt-6 items-center justify-start">
                 <FaFacebook
                   size="20px"
                   className="hover:text-white cursor-pointer "
@@ -82,17 +82,17 @@ const Teams = () => {
           </div>
         </div>
         <div>
-          <div className="card mx-auto">
+          <div className="cards mx-auto">
             <img
               src="https://i.ibb.co/LY9tW3s/man1.jpg"
-              className="card-img-top"
+              className="cards-img-top rounded-tr-2xl rounded-bl-2xl"
               alt="man-img"
             />
-
-            <div className="card-body bg-color ">
-              <h5 className="card-title font-bold">Jack Son</h5>
-              <p className="card-text">Work Shop Manager</p>
-              <p className="flex gap-6  items-center justify-start">
+            <div className="cards-footer mt-2"></div>
+            <div className="cards-body bg-color ">
+              <h5 className="cards-title font-bold">Jack Son</h5>
+              <p className="cards-text">Work Shop Manager</p>
+              <p className="flex gap-6 mt-6 items-center justify-start">
                 <FaFacebook
                   size="20px"
                   className="hover:text-white cursor-pointer "
@@ -114,17 +114,17 @@ const Teams = () => {
           </div>
         </div>
         <div className=" ">
-          <div className="card mx-auto">
+          <div className="cards mx-auto">
             <img
               src="https://i.ibb.co/3RKWRYz/women3.jpg"
-              className="card-img-top"
+              className="cards-img-top rounded-tr-2xl rounded-bl-2xl"
               alt="man-img"
             />
-
-            <div className="card-body bg-color">
-              <h5 className="card-title font-bold">Armerina Nisha</h5>
-              <p className="card-text">Work Shop Manager</p>
-              <p className="flex gap-6  items-center justify-start">
+            <div className="cards-footer mt-2"></div>
+            <div className="cards-body bg-color">
+              <h5 className="cards-title font-bold">Armerina Nisha</h5>
+              <p className="cards-text">Work Shop Manager</p>
+              <p className="flex gap-6 mt-6 items-center justify-start">
                 <FaFacebook
                   size="20px"
                   className="hover:text-white cursor-pointer "

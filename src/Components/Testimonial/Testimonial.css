@@ -1,4 +1,7 @@
-.testimonial:hover{
-background: rgb(176, 176, 176);
+/* .testimonial{
 color: rgb(251, 249, 249);
+} */
+.testimonial:hover{
+background: rgb(114, 114, 114);
+
 }

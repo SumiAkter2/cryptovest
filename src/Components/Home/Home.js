@@ -3,7 +3,6 @@ import Teams from "../About/Teams";
 import Coins from "../Coins/Coins";
 import Subscribe from "../Subscribs/Subscribe";
 import Testimonial from "../Testimonial/Testimonial";
-
 import Banner from "./Banner";
 import CurrencyConvert from "./CurrencyConvert";
 import Info from "./Info";

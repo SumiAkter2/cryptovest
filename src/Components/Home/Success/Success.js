@@ -8,7 +8,7 @@ import "./Success.css";
 const Success = () => {
   return (
     <div>
-      <div className="hero min-h-screen success-content my-12">
+      <div className="hero min-h-screen success-content ">
         <div className="mx-6  text-white ">
           <div className=" opacity-50  "></div>
           <div className="text-center success">

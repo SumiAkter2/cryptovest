@@ -47,12 +47,12 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="bg-gray-300 py-12">
+    <div className="bg-primary py-12">
       <div className="flex justify-center items-start mt-12 mb-16 ">
         <h1>
           <FaQuoteLeft color="skyBlue" />
         </h1>
-        <h1 className="text-center text-4xl text-info mx-4">Our Client Say</h1>
+        <h1 className="text-center text-4xl text-neutral mx-4 mb-6">What Our Client Say</h1>
         <h1>
           <FaQuoteRight color="skyBlue" />
         </h1>
