@@ -6,16 +6,16 @@ import Teams from "./Teams";
 const About = () => {
   return (
     <div>
-      <section className="card lg:card-side lg:h-96 bg-base-100 shadow-xl my-6 mx-12 ">
-        <figure className="mx-6">
+      <section className=" lg:flex justify-center items-center  bg-primary shadow-xl  p-4">
+        <figure className=" p-4">
           <img
-            className="lg:w-full w-96 rounded-lg mt-6"
+            className="lg:w-full w-96 mx-auto rounded-lg mt-6"
             src="https://i.ibb.co/VSV2LRQ/bitcoin-2007769-480.jpg"
             alt="coin-img"
           />
         </figure>
         <div className="card-body">
-          <h1 className="lg:text-5xl text-3xl  font-bold px-12  pt-12 pb-6">
+          <h1 className="lg:text-5xl text-3xl  font-bold px-12   pb-6">
             WelCome To CryptoVest.
           </h1>
           <p className=" font-bold px-12 mt-6">
@@ -26,7 +26,6 @@ const About = () => {
           <div className="card-actions justify-end"></div>
         </div>
       </section>
-     
 
       {/* second Part */}
       <div
@@ -100,7 +99,7 @@ const About = () => {
         </div>
       </div>
       {/* third part */}
-      {/* <Teams /> */}
+      <Teams />
     </div>
   );
 };

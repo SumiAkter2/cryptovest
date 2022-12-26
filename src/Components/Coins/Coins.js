@@ -33,6 +33,11 @@ const Coins = () => {
 
   return (
     <div className="overflow-x-auto">
+      <h1 className="text-center text-5xl mt-12  text-neutral ">
+        {" "}
+        Digital Coins
+      </h1>
+      <div className="text-center text-neutral text-2xl ">...</div>
       <div className="flex justify-start">
         <form onSubmit={handleSearch} className="my-12 mx-6">
           <input

@@ -1,5 +1,7 @@
 import React from "react";
+import Teams from "../About/Teams";
 import Coins from "../Coins/Coins";
+import Subscribe from "../Subscribs/Subscribe";
 import Testimonial from "../Testimonial/Testimonial";
 
 import Banner from "./Banner";
@@ -13,10 +15,11 @@ const Home = () => {
       <Banner />
       <Info />
       <CurrencyConvert />
-      <Testimonial />
-      <Success />
-
       <Coins />
+      <Success />
+      <Teams />
+      <Testimonial />
+      <Subscribe />
     </div>
   );
 };

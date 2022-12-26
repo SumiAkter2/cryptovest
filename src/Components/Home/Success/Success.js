@@ -3,18 +3,12 @@ import { GiWallet } from "react-icons/gi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { BiTransfer } from "react-icons/bi";
-import img from "../../../img/depositphotos_152853602-stock-photo-bitcoin-coin-l-on-laptop.jpg";
 import CountUp from "react-countup";
 import "./Success.css";
 const Success = () => {
   return (
     <div>
-      <div
-        className="hero min-h-screen success-content"
-        // style={{
-        //   backgroundImage: `url(${img})`,
-        // }}
-      >
+      <div className="hero min-h-screen success-content my-12">
         <div className="mx-6  text-white ">
           <div className=" opacity-50  "></div>
           <div className="text-center success">

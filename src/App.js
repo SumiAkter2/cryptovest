@@ -1,5 +1,6 @@
-import { createContext, useEffect } from "react";
-
+import { createContext } from "react";
+import Contact from "./Components/Contact/Contact";
+import LogIn from "./Components/Log In/LogIn";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Carts from "./Components/Carts/Carts";
@@ -46,11 +47,9 @@ function App() {
     return <Loading />;
   }
 
-  <script>AOS.init();</script>;
-
   return (
     <CartContext.Provider value={addToCart}>
-      <div className="App bg-primary">
+      <div className="App ">
         <Navbar cart={cart}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
@@ -63,6 +62,8 @@ function App() {
               element={<Carts cart={cart} refetch={refetch} />}
             ></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/login" element={<LogIn />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-
+import LogIn from '../Log In/LogIn';
 const Navbar = ({ children, cart }) => {
   const [dark, setDark] = useState(false);
   let quantity = 0;
@@ -57,6 +57,18 @@ const Navbar = ({ children, cart }) => {
                   <NavLink className="rounded-lg  my-2  " to="/about">
                     About
                   </NavLink>
+                </li>
+                <li>
+                  <NavLink className="rounded-lg  my-2  " to="/contact">
+                    Contact
+                  </NavLink>
+                </li>
+                <li>
+                  <label htmlFor="my-modal-6" className="rounded-lg  my-2">
+                    {/* <NavLink className="rounded-lg  my-2 btn " to="/login"> */}
+                    Log In/Sign Up
+                    {/* </NavLink> */}
+                  </label>
                 </li>
                 <li>
                   <NavLink className="rounded-lg  my-2  " to="/carts">
@@ -136,6 +148,21 @@ const Navbar = ({ children, cart }) => {
                 Coins
               </NavLink>
             </li>
+            <li>
+              <NavLink className="rounded-lg  my-2   " to="/about">
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="rounded-lg  my-2   " to="/contact">
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="rounded-lg  my-2   " to="/login">
+                Log In / Sign UP
+              </NavLink>
+            </li>
             {/* {
                             user && <li><NavLink className='rounded-lg  my-2  ' to='/purchase'>Purchase</NavLink></li>
                         } */}
@@ -164,6 +191,27 @@ const Navbar = ({ children, cart }) => {
                 </li>
               )} */}
           </ul>
+        </div>
+      </div>
+      {/* +++++++++++++++++++++++++++++++++++++++++++++++++ */}
+      <div>
+        <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
+            <LogIn/>
+            {/* <h3 className="font-bold text-lg">
+              Congratulations random Internet user!
+            </h3>
+            <p className="py-4">
+              You've been selected for a chance to get one year of subscription
+              to use Wikipedia for free!
+            </p> */}
+            <div className="modal-action">
+              <label htmlFor="my-modal-6" className="btn">
+                Yay!
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
