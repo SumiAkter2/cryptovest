@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import LogIn from "../Log In/LogIn";
+import SignUp from "../Log In/SignUp";
 const Navbar = ({ children, cart }) => {
   const [dark, setDark] = useState(false);
   let quantity = 0;
@@ -63,9 +64,15 @@ const Navbar = ({ children, cart }) => {
                     Contact
                   </NavLink>
                 </li>
+
+                <li>
+                  <label htmlFor="login-modal-6" className="rounded-lg  my-2">
+                    Log In
+                  </label>
+                </li>
                 <li>
                   <label htmlFor="my-modal-6" className="rounded-lg  my-2">
-                    Log In/Sign Up
+                    Sign Up
                   </label>
                 </li>
                 <li>
@@ -191,14 +198,29 @@ const Navbar = ({ children, cart }) => {
           </ul>
         </div>
       </div>
-      {/* +++++++++++++++++++++++++++++++++++++++++++++++++ */}
+      {/* +++++++++++++++++++++++++++++++++++++++++++++++++Signup modal==================== */}
       <div>
         <input type="checkbox" id="my-modal-6" className="modal-toggle" />
         <div className="modal modal-bottom sm:modal-middle ">
-          <div className="modal-box bg-slate-300">
+          <div className="w-80 bg-transparent ">
             <label
               htmlFor="my-modal-6"
-              className="btn btn-sm btn-circle absolute right-2 top-2"
+              className="btn bg-white btn-sm btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <SignUp />
+          </div>
+        </div>
+      </div>
+      {/* =============log in modal================ */}
+      <div>
+        <input type="checkbox" id="login-modal-6" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle ">
+          <div className="w-80 bg-transparent ">
+            <label
+              htmlFor="login-modal-6"
+              className="btn bg-white btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
