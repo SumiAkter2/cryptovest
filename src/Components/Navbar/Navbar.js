@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import LogIn from "../Log In/LogIn";
-import SignUp from "../Log In/SignUp";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import auth from "../../Firebase/firebase.init";
+import swal from "sweetalert";
+
 const Navbar = ({ children, cart }) => {
+  const [user] = useAuthState(auth);
   const [dark, setDark] = useState(false);
+  const [signOut, loading, error] = useSignOut(auth);
   let quantity = 0;
   cart.forEach((coin) => {
     quantity = quantity + coin.quantity;
@@ -65,52 +69,48 @@ const Navbar = ({ children, cart }) => {
                   </NavLink>
                 </li>
 
-                <li>
-                  <label htmlFor="login-modal-6" className="rounded-lg  my-2">
-                    Log In
-                  </label>
-                </li>
-                <li>
-                  <label htmlFor="my-modal-6" className="rounded-lg  my-2">
-                    Sign Up
-                  </label>
-                </li>
+                {user && (
+                  <li>
+                    <NavLink className="rounded-lg  my-2  " to="/dashboard">
+                      Dashboard
+                    </NavLink>
+                  </li>
+                )}
+                {user ? (
+                  <>
+                    <li>
+                      <button
+                        className=" rounded-lg  my-2  "
+                        onClick={async () => {
+                          const success = await signOut();
+                          if (success) {
+                            swal({
+                              type: "success",
+                              text: "You are Sign Out Now",
+                            });
+                          }
+                        }}
+                      >
+                        Sign Out
+                      </button>
+                    </li>
+                    <li>
+                      <NavLink>{user?.email}</NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    <NavLink className="rounded-lg  my-2  " to="/login">
+                      Log In/Sign Up
+                    </NavLink>
+                  </li>
+                )}
+                {/* =======================cart============= */}
                 <li>
                   <NavLink className="rounded-lg  my-2  " to="/carts">
                     <HiOutlineShoppingCart /> {quantity}
                   </NavLink>
                 </li>
-                {/* {user && (
-                    <li>
-                      <NavLink className="rounded-lg  my-2  " to="/dashboard">
-                        Dashboard
-                      </NavLink>
-                    </li>
-                  )}
-                  {user ? (
-                    <>
-                      <li>
-                        <button
-                          className="bg-primary rounded-lg  my-2  "
-                          onClick={logout}
-                        >
-                          Sign Out
-                        </button>
-                      </li>
-                      <li>
-                        
-                        <button>{user?.displayName}</button>
-                        <button> {user?.email}</button>
-                      </li>
-                    </>
-                  ) : (
-                    <li>
-                      <NavLink className="rounded-lg  my-2  " to="/login">
-                        Log In
-                      </NavLink>
-                    </li>
-                  )} */}
-
                 {/* toggle */}
 
                 <label className="swap swap-rotate">
@@ -196,36 +196,6 @@ const Navbar = ({ children, cart }) => {
                 </li>
               )} */}
           </ul>
-        </div>
-      </div>
-      {/* +++++++++++++++++++++++++++++++++++++++++++++++++Signup modal==================== */}
-      <div>
-        <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-        <div className="modal modal-bottom sm:modal-middle ">
-          <div className="w-80 bg-transparent ">
-            <label
-              htmlFor="my-modal-6"
-              className="btn bg-white btn-sm btn-circle absolute right-2 top-2"
-            >
-              ✕
-            </label>
-            <SignUp />
-          </div>
-        </div>
-      </div>
-      {/* =============log in modal================ */}
-      <div>
-        <input type="checkbox" id="login-modal-6" className="modal-toggle" />
-        <div className="modal modal-bottom sm:modal-middle ">
-          <div className="w-80 bg-transparent ">
-            <label
-              htmlFor="login-modal-6"
-              className="btn bg-white btn-sm btn-circle absolute right-2 top-2"
-            >
-              ✕
-            </label>
-            <LogIn />
-          </div>
         </div>
       </div>
     </div>

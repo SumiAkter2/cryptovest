@@ -1,25 +1,30 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
+import "./Login.css";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const navigate=useNavigate()
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data.email, data.password,data.name);
+    createUserWithEmailAndPassword(data.email, data.password, data.name);
     console.log(data);
+    console.log(user);
+
     console.log(error);
   };
   return (
-    <div>
-      <div className=" lg:w-96 mt-12 ">
+    <div className=" signup-bg ">
+      <div className=" my-6 mx-auto  content-bg">
         <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl">
           <h1 className="text-3xl text-info text-center mt-4">
             Sign Up Please
@@ -95,14 +100,9 @@ const SignUp = () => {
               {errors.password?.type === "maxLength" && (
                 <span className=" text-error">{errors.password.message}</span>
               )}
-              <label className="label ">
-                <a
-                  href="#f"
-                  className="label-text-alt link link-hover text-black"
-                >
-                  Forgot password? Reset Password
-                </a>
-              </label>
+              <p className="text-sm mt-2">
+                Already Have An Account?<span className="cursor-pointer hover:text-info ml-2 font-bold" onClick={()=>navigate('/login')}>Please Log In</span>
+              </p>
             </div>
             <div className="form-control mt-6">
               <button

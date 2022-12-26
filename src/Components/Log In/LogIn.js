@@ -1,26 +1,30 @@
 import React from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
 
 const LogIn = () => {
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+ 
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data.email, data.password);
+    signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
-    console.log(error);
+    console.log(user);
+    navigate("/");
   };
 
   return (
-    <div className=" lg:w-96 mb-6 ">
-      <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl">
+    <div className="signup-bg  ">
+      <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl my-12">
         <h1 className="text-3xl text-info text-center mt-4">Log In</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
           <div className="form-control ">
@@ -82,14 +86,16 @@ const LogIn = () => {
                 Forgot password? Reset Password
               </a>
             </label>
-            <label className="label ">
-              <a
-                href="#f"
-                className="label-text-alt link link-hover text-black"
+
+            <p className="text-sm mt-2">
+              New to Here?
+              <span
+                className="cursor-pointer hover:text-info ml-2 font-bold"
+                onClick={() => navigate("/signup")}
               >
-                Forgot password? Reset Password
-              </a>
-            </label>
+                Please Sign Up
+              </span>
+            </p>
           </div>
           <div className="form-control mt-6">
             <button
