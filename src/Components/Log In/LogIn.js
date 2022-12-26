@@ -26,13 +26,13 @@ const LogIn = () => {
     console.log(user);
     navigate("/");
   };
-  const actionCodeSettings = {
-    url: "https://mail.google.com/mail/u/0/#inbox",
-  };
-  const PasswordReset = (data) => {
-    sendPasswordResetEmail(data.email, actionCodeSettings);
-    console.log(data);
-  };
+  // const actionCodeSettings = {
+  //   url: "https://mail.google.com/mail/u/0/#inbox",
+  // };
+  // const PasswordReset = (data) => {
+  //   sendPasswordResetEmail(data.email, actionCodeSettings);
+  //   console.log(data);
+  // };
   return (
     <div className="signup-bg  ">
       <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl my-12">
@@ -93,7 +93,7 @@ const LogIn = () => {
               Forgotten Password?
               <span
                 className="cursor-pointer hover:text-info ml-2 font-bold"
-                onClick={PasswordReset}
+                // onClick={PasswordReset}
               >
                 Please Reset
               </span>
