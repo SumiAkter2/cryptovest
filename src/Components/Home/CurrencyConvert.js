@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
-import img from '../../img/bitc.png'
+import img from "../../img/bitc.png";
 import { SiConvertio } from "react-icons/si";
 import useCoins from "../../Hooks/useCoins";
-import  './Convert.css';
+import "./Convert.css";
 const CurrencyConvert = () => {
   const [coins] = useCoins();
   const [amount, setAmount] = useState(0);
@@ -65,7 +65,7 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   type="text"
                   placeholder="1"
-                  className="input input-bordered input-info w-full max-w-xs mt-2 text-black"
+                  className="input input-bordered input-info w-full max-w-xs mt-2 bg-slate-300 text-info"
                 />
               </div>
               <div className="font-bold text-xl ">
@@ -74,12 +74,9 @@ const CurrencyConvert = () => {
                 <select
                   name="from"
                   onBlur={(e) => e.target.value}
-                  className="select text-black select-info w-full max-w-xs mt-2 lg:ml-2"
+                  className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
                   <option selected>Bit</option>
-                  {/* <option>Ethereum</option>
-                  <option>Tether</option>
-                  <option>Binancecoin</option> */}
                 </select>
               </div>
               <div>
@@ -91,7 +88,7 @@ const CurrencyConvert = () => {
                 <select
                   name="to"
                   onBlur={(e) => e.target.value}
-                  className="select text-black select-info w-full max-w-xs mt-2 lg:ml-2"
+                  className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
                   <option selected>USD</option>
                   <option>EURO</option>
@@ -99,7 +96,7 @@ const CurrencyConvert = () => {
               </div>
               <button
                 type="submit"
-                className="btn bg-white btn-info  btn-outline my-3 duration-300 ease-in  mt-12 lg:ml-12 "
+                className="btn  btn-info bg-slate-300  btn-outline my-3 duration-300 ease-in  mt-12 lg:ml-12 "
               >
                 <SiConvertio className="mr-2" /> Convert
               </button>

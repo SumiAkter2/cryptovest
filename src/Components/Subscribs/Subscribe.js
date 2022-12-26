@@ -18,7 +18,7 @@ const Subscribe = () => {
             placeholder="Type Email"
             className="input input-bordered input-secondary w-full "
           />
-          <button className="btn btn-outline btn-neutral ml-3 text-white">
+          <button className="btn btn-outline btn-primary ml-3 text-white">
             Subscribe
           </button>
         </div>
