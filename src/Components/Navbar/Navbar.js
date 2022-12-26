@@ -85,7 +85,7 @@ const Navbar = ({ children, cart }) => {
                           const success = await signOut();
                           if (success) {
                             swal({
-                              type: "success",
+                              icon: "success",
                               text: "You are Sign Out Now",
                             });
                           }

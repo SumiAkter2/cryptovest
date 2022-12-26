@@ -1,12 +1,17 @@
 import React from "react";
-import { useAuthState, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useUpdatePassword,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
 
 const LogIn = () => {
- 
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
@@ -21,7 +26,13 @@ const LogIn = () => {
     console.log(user);
     navigate("/");
   };
-
+  const actionCodeSettings = {
+    url: "https://mail.google.com/mail/u/0/#inbox",
+  };
+  const PasswordReset = (data) => {
+    sendPasswordResetEmail(data.email, actionCodeSettings);
+    console.log(data);
+  };
   return (
     <div className="signup-bg  ">
       <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl my-12">
@@ -78,14 +89,15 @@ const LogIn = () => {
             {errors.password?.type === "maxLength" && (
               <span className=" text-error">{errors.password.message}</span>
             )}
-            <label className="label ">
-              <a
-                href="#f"
-                className="label-text-alt link link-hover text-black"
+            <p className="text-sm mt-2">
+              Forgotten Password?
+              <span
+                className="cursor-pointer hover:text-info ml-2 font-bold"
+                onClick={PasswordReset}
               >
-                Forgot password? Reset Password
-              </a>
-            </label>
+                Please Reset
+              </span>
+            </p>
 
             <p className="text-sm mt-2">
               New to Here?

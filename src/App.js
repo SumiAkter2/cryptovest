@@ -17,6 +17,7 @@ import useCart from "./Hooks/useCart";
 import useCoins from "./Hooks/useCoins";
 import { addToLocalStorage } from "./utilities/LocalStorageDB";
 import swal from "sweetalert";
+import Dashboard from "./Components/Navbar/Dashboard/Dashboard";
 
 export const CartContext = createContext("");
 
@@ -66,6 +67,7 @@ function App() {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/login" element={<LogIn />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />
