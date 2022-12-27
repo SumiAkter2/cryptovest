@@ -2,6 +2,7 @@ import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
 import "./Login.css";
@@ -9,7 +10,7 @@ import "./Login.css";
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -17,9 +18,9 @@ const SignUp = () => {
   } = useForm();
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email, data.password, data.name);
-    console.log(data);
-    console.log(user);
+    swal("success");
 
+    console.log(user);
     console.log(error);
   };
   return (
@@ -100,8 +101,14 @@ const SignUp = () => {
               {errors.password?.type === "maxLength" && (
                 <span className=" text-error">{errors.password.message}</span>
               )}
-              <p className="text-sm mt-2">
-                Already Have An Account?<span className="cursor-pointer hover:text-info ml-2 font-bold" onClick={()=>navigate('/login')}>Please Log In</span>
+              <p className="text-sm mt-2 text-black">
+                Already Have An Account?
+                <span
+                  className="cursor-pointer hover:text-info ml-2 font-bold"
+                  onClick={() => navigate("/login")}
+                >
+                  Please Log In
+                </span>
               </p>
             </div>
             <div className="form-control mt-6">

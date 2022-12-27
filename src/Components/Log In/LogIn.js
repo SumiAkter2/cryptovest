@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
 
@@ -24,15 +25,10 @@ const LogIn = () => {
     signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
     console.log(user);
+    swal("login done");
     navigate("/");
   };
-  // const actionCodeSettings = {
-  //   url: "https://mail.google.com/mail/u/0/#inbox",
-  // };
-  // const PasswordReset = (data) => {
-  //   sendPasswordResetEmail(data.email, actionCodeSettings);
-  //   console.log(data);
-  // };
+
   return (
     <div className="signup-bg  ">
       <div className="card flex-shrink-0 w-full  max-w-sm shadow-2xl  mx-auto bg-slate-300 rounded-2xl my-12">
@@ -89,17 +85,17 @@ const LogIn = () => {
             {errors.password?.type === "maxLength" && (
               <span className=" text-error">{errors.password.message}</span>
             )}
-            <p className="text-sm mt-2">
+            <p className="text-sm mt-2 text-black">
               Forgotten Password?
               <span
                 className="cursor-pointer hover:text-info ml-2 font-bold"
-                // onClick={PasswordReset}
+                onClick={() => navigate("/reset")}
               >
                 Please Reset
               </span>
             </p>
 
-            <p className="text-sm mt-2">
+            <p className="text-sm mt-2 text-black">
               New to Here?
               <span
                 className="cursor-pointer hover:text-info ml-2 font-bold"
