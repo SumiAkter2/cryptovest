@@ -1,0 +1,9 @@
+.footer-bg{
+    height: 100%;
+    background-image: url('../../img/crypto-news-footer-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-blend-mode: overlay;
+    color:#fff;
+}

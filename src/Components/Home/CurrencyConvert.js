@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
-import img from "../../img/bitc.png";
 import { SiConvertio } from "react-icons/si";
 import useCoins from "../../Hooks/useCoins";
 import "./Convert.css";
