@@ -75,7 +75,7 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
-                  <option selected>Bit</option>
+                  <option defaultValue="Bit">Bit</option>
                 </select>
               </div>
               <div>
@@ -89,7 +89,7 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
                 >
-                  <option selected>USD</option>
+                  <option defaultValue="USD">USD</option>
                   <option>EURO</option>
                 </select>
               </div>

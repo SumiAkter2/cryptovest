@@ -19,6 +19,7 @@ import { addToLocalStorage } from "./utilities/LocalStorageDB";
 import swal from "sweetalert";
 import Dashboard from "./Components/Navbar/Dashboard/Dashboard";
 import Reset from "./Components/Log In/Reset";
+import Toggle from "./Components/Home/Toggle";
 
 export const CartContext = createContext("");
 
@@ -56,9 +57,7 @@ function App() {
         <Navbar cart={cart}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-
             <Route path="/coin" element={<Coin />}></Route>
-
             <Route path="/detail/:id" element={<DetailCoin />}></Route>
             <Route
               path="/carts"

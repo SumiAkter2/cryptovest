@@ -4,7 +4,8 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import swal from "sweetalert";
-
+import "../Home/toggle.css";
+import "./Dashboard/Navbar.css";
 const Navbar = ({ children, cart }) => {
   const [user] = useAuthState(auth);
   const [dark, setDark] = useState(false);
@@ -13,12 +14,13 @@ const Navbar = ({ children, cart }) => {
   cart.forEach((coin) => {
     quantity = quantity + coin.quantity;
   });
+
   return (
-    <div data-theme={dark ? "dark" : "light"}>
+    <div data-theme={dark ? "dark" : "light"} className=" ">
       <div className="drawer drawer-end fixed top-0 ">
         <input id="  my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
-          <div className="w-full navbar bg-primary  px-12">
+          <div className="w-full navbar bg-primary  px-12  sticky top-0 ">
             <div className="flex-1 px-2 mx-2 font-bold text-2xl">
               <img
                 style={{ width: "70px" }}
@@ -26,7 +28,14 @@ const Navbar = ({ children, cart }) => {
                 alt="bitcoin-logo"
               />
               <h2>CryptoVest</h2>
+              <div className=" ml-12">
+                <label class="switch">
+                  <input type="checkbox" onClick={() => setDark(!dark)} />
+                  <span class="sliders"></span>
+                </label>
+              </div>
             </div>
+
             <div className="flex-none lg:hidden">
               <label for="  my-drawer-3" className="btn btn-square btn-ghost">
                 <svg
@@ -95,7 +104,8 @@ const Navbar = ({ children, cart }) => {
                       </button>
                     </li>
                     <li>
-                      <NavLink>{user?.email}</NavLink>
+                      {/* <NavLink>{user?.email}</NavLink>
+                      <NavLink>{user?.displayName}</NavLink> */}
                     </li>
                   </>
                 ) : (
@@ -112,8 +122,8 @@ const Navbar = ({ children, cart }) => {
                   </NavLink>
                 </li>
                 {/* toggle */}
-
-                <label className="swap swap-rotate">
+                {/* <Toggle /> */}
+                {/* <label className="swap swap-rotate">
                   <input type="checkbox" onClick={() => setDark(!dark)} />
 
                   <svg
@@ -128,11 +138,10 @@ const Navbar = ({ children, cart }) => {
                     className="swap-off fill-current w-10 h-10"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    // color="#2dd4bf"
                   >
                     <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                   </svg>
-                </label>
+                </label> */}
               </ul>
             </div>
           </div>
