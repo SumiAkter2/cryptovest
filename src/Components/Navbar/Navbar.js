@@ -197,59 +197,91 @@ const Navbar = ({ children, cart }) => {
         <div className="drawer-side   ">
           <label for="  my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-2 overflow-y-auto w-80 bg-base-100">
+            {navItems}
             <li>
-              <NavLink className="rounded-lg  my-2   " to="/">
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink className="rounded-lg  my-2  " to="/coin">
-                Coins
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="rounded-lg  my-2   " to="/about">
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="rounded-lg  my-2   " to="/contact">
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="rounded-lg  my-2   " to="/login">
-                Log In / Sign UP
-              </NavLink>
-            </li>
-            {/* {
-                            user && <li><NavLink className='rounded-lg  my-2  ' to='/purchase'>Purchase</NavLink></li>
-                        } */}
-            {/* {user && (
-                <li>
-                  <NavLink className="rounded-lg  my-2  " to="/dashboard">
-                    Dashboard
-                  </NavLink>
-                </li>
-              )}
-
-              {user ? (
-                <li>
-                  <button
-                    className="bg-primary rounded-lg  my-2  "
-                    onClick={logout}
+              <NavLink className="rounded-lg h-12 my-auto">
+                <div className="dropdown dropdown-end ">
+                  <label tabIndex={0} className=" cursor-pointer indicator">
+                    <span className="badge badge-sm indicator-item bg-primary text-gray-400">
+                      {quantity}
+                    </span>
+                    <HiOutlineShoppingCart
+                      size="25px"
+                      className=" hover:fill-gray-700 "
+                    />
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu  shadow bg-base-100 rounded-box w-32 text-center"
                   >
-                    Sign Out
-                  </button>
-                </li>
-              ) : (
+                    <div className="mx-auto">
+                      <li>
+                        <p>Item {quantity}</p>
+                      </li>
+                      <li>
+                        <Link to="/carts">View Cart</Link>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+              </NavLink>
+            </li>
+            {user ? (
+              <>
                 <li>
-                  <NavLink className="rounded-lg  my-2  " to="/login">
-                    Log In
+                  <NavLink className="rounded-lg h-12 my-auto">
+                    <div className="dropdown dropdown-end">
+                      <label
+                        tabIndex={0}
+                        className="avatar cursor-pointer btn btn-ghost"
+                      >
+                        <div className="w-10 rounded-full   cursor-pointer">
+                          <img
+                            className=""
+                            src="https://i.ibb.co/5sWZQdg/default-images.jpg"
+                            alt="profile-img"
+                          />
+                          <span className="badge badge-xs bg-green-600 indicator-item"></span>
+                        </div>
+                      </label>
+                      <ul
+                        tabIndex={0}
+                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-48 mx-auto"
+                      >
+                        <div className="mx-auto">
+                          <li>
+                            <a className="text-center">Profile</a>
+                          </li>
+                          <li>
+                            <a>Settings</a>
+                          </li>
+                          <li>
+                            <button
+                              className=" rounded-lg  my-2  "
+                              onClick={async () => {
+                                const success = await signOut();
+                                if (success) {
+                                  swal({
+                                    icon: "success",
+                                    text: "You are Sign Out Now",
+                                  });
+                                }
+                              }}
+                            >
+                              Sign Out
+                            </button>
+                          </li>
+                        </div>
+                      </ul>
+                    </div>
                   </NavLink>
                 </li>
-              )} */}
+              </>
+            ) : (
+              <li>
+                <NavLink to="/login"> Log In</NavLink>
+              </li>
+            )}
           </ul>
         </div>
       </div>

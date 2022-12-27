@@ -18,8 +18,11 @@ const SignUp = () => {
   } = useForm();
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email, data.password, data.name);
-    swal("success");
-
+    swal({
+      icon: "success",
+      text: "Sign Up Successfully",
+    });
+    navigate("/");
     console.log(user);
     console.log(error);
   };

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../../Firebase/firebase.init";
 
@@ -10,14 +11,20 @@ const Reset = () => {
   const actionCodeSettings = {
     url: "http://localhost:3000/reset",
   };
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-      sendPasswordResetEmail(data.email, actionCodeSettings);
-      swal('Send password.Please check your phone')
+    sendPasswordResetEmail(data.email, actionCodeSettings);
+    swal({
+      icon: "success",
+      text: "Send password.Please check your phone",
+    });
+    navigate("/");
+
     console.log(data);
   };
   return (
