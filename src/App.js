@@ -19,7 +19,6 @@ import { addToLocalStorage } from "./utilities/LocalStorageDB";
 import swal from "sweetalert";
 import Dashboard from "./Components/Navbar/Dashboard/Dashboard";
 import Reset from "./Components/Log In/Reset";
-import Toggle from "./Components/Home/Toggle";
 
 export const CartContext = createContext("");
 
