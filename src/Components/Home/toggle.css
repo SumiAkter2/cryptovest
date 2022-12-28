@@ -3,8 +3,8 @@
     font-size: 17px;
     position: relative;
     display: inline-block;
-    width: 3.5em;
-    height: 2em;
+    width: 2.5em;
+    height: 1.5em;
 }
 
 /* Hide default HTML checkbox */
@@ -31,8 +31,8 @@
 .sliders:before {
     position: absolute;
     content: "";
-    height: 1.4em;
-    width: 1.4em;
+    height: 1.2em;
+    width: 1.2em;
     border-radius: 50%;
     left: 10%;
     bottom: 15%;

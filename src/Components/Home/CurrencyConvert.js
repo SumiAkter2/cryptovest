@@ -44,8 +44,8 @@ const CurrencyConvert = () => {
         }}
       >
         <div className="mx-12 lg:mx-0 lg:w-full text-white">
-          <div className="convert-content">
-            <h1 className="mb-12 text-5xl font-bold text-white">
+          <div className="convert-content ">
+            <h1 className="mb-12 text-3xl  lg:text-5xl min-w-max font-bold text-white mx-12">
               Cryptocurrency Calculator For Any Kind Of Currency
             </h1>
             <p className="my-8 text-xl">

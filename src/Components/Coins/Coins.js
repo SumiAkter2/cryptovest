@@ -47,7 +47,7 @@ const Coins = () => {
             placeholder="Search"
             onChange={(e) => setSearchedText(e.target.value)}
           />
-          <button className="btn btn-info  " type="submit">
+          <button className="btn btn-info mt-4" type="submit">
             Enter
           </button>
         </form>

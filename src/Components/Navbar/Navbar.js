@@ -41,7 +41,7 @@ const Navbar = ({ children, cart }) => {
       <div className="drawer drawer-end fixed top-0 ">
         <input id="  my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
-          <div className="w-full navbar bg-primary  px-12   ">
+          <div className="w-full navbar bg-primary  lg:px-12   ">
             <div className="flex-1 px-2 lg:mx-2 font-bold text-2xl">
               <img
                 style={{ width: "70px" }}
@@ -49,7 +49,7 @@ const Navbar = ({ children, cart }) => {
                 alt="bitcoin-logo"
               />
               <h2>CryptoVest</h2>
-              <div className=" lg:ml-12">
+              <div className=" lg:ml-12 ml-2">
                 <label class="switch">
                   <input type="checkbox" onClick={() => setDark(!dark)} />
                   <span class="sliders"></span>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Info = () => {
   return (
-    <div className="hero min-h-screen bg-base-200 my-4 px-6 ">
+    <div className="hero min-h-screen bg-base-200 my-4 lg:px-6 ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src="https://i.ibb.co/JsQycZS/118713154-gettyimages-897291236.jpg"
@@ -10,7 +10,7 @@ const Info = () => {
           alt="img"
         />
         <div className="text-left">
-          <h1 className="text-5xl font-semibold text-info">
+          <h1 className="lg:text-5xl text-3xl px-2 font-semibold text-info">
             What is cryptocurrency ?
           </h1>
           <div className="divider w-8/12"></div>
