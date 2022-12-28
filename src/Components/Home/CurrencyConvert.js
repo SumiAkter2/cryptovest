@@ -37,16 +37,12 @@ const CurrencyConvert = () => {
 
   return (
     <div>
-      <div
-        className="hero min-h-screen  convert-container"
-        style={{
-          backgroundImage: `url("https://i.ibb.co/jkfXFTD/bitcoin-3132574-340.jpg")`,
-        }}
-      >
-        <div className="mx-12 lg:mx-0 lg:w-full text-white">
-          <div className="convert-content ">
-            <h1 className="mb-12 text-3xl  lg:text-5xl min-w-max font-bold text-white mx-12">
-              Cryptocurrency Calculator For Any Kind Of Currency
+      <div className="hero min-h-screen convert-container">
+        <div className="mx-6 text-white ">
+          <div className=" opacity-50 "></div>
+          <div className="text-start convert-content">
+            <h1 className="mb-12 text-2xl lg:text-5xl font-bold text-white">
+              Cryptocurrency Calculator
             </h1>
             <p className="my-8 text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
@@ -63,7 +59,7 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   type="text"
                   placeholder="1"
-                  className="input input-bordered input-info w-full max-w-xs mt-2 bg-slate-300 text-info"
+                  className="input input-bordered input-info lg:w-full max-w-xs mt-2 bg-slate-300 text-info"
                 />
               </div>
               <div className="font-bold text-xl ">
@@ -72,7 +68,7 @@ const CurrencyConvert = () => {
                 <select
                   name="from"
                   onBlur={(e) => e.target.value}
-                  className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
+                  className="select bg-slate-300 text-info select-info lg:w-full max-w-xs mt-2 lg:ml-2"
                 >
                   <option defaultValue="Bit">Bit</option>
                 </select>
@@ -86,7 +82,7 @@ const CurrencyConvert = () => {
                 <select
                   name="to"
                   onBlur={(e) => e.target.value}
-                  className="select bg-slate-300 text-info select-info w-full max-w-xs mt-2 lg:ml-2"
+                  className="select bg-slate-300 text-info select-info lg:w-full max-w-xs mt-2 lg:ml-2"
                 >
                   <option defaultValue="USD">USD</option>
                   <option>EURO</option>

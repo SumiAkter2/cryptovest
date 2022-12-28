@@ -9,10 +9,12 @@ const Success = () => {
   return (
     <div>
       <div className="hero min-h-screen success-content ">
-        <div className="mx-6  text-white ">
-          <div className=" opacity-50  "></div>
+        <div className="mx-6 text-white ">
+          <div className=" opacity-50 "></div>
           <div className="text-center success">
-            <h1 className="mb-12 text-5xl font-bold text-white">Our Success</h1>
+            <h1 className="mb-12 lg:text-3xl text-5xl font-bold text-white">
+              Our Success
+            </h1>
             <p className="my-8 text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
               pariatur recusandae numquam nisi quis iure accusamus, laborum
