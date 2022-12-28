@@ -39,16 +39,16 @@ const CurrencyConvert = () => {
     <div>
       <div className="hero min-h-screen convert-container">
         <div className="mx-6 text-white ">
-          <div className=" opacity-50 "></div>
+          {/* <div className=" opacity-50 "></div> */}
           <div className="text-start convert-content">
             <h1 className="mb-12 text-2xl lg:text-5xl font-bold text-white">
               Cryptocurrency Calculator
             </h1>
-            <p className="my-8 text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-              pariatur recusandae numquam nisi quis iure accusamus, laborum
-              dicta voluptatem distinctio porro quam saepe sint ipsam ad id
-              quibusdam voluptate qui!
+            <p className="mr-12">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+              illo odit hic eligendi doloribus sit eaque? Numquam perspiciatis
+              repudiandae eius. Totam minus unde dolore asperiores perferendis
+              voluptas porro illo odit!
             </p>
             <form onSubmit={handleSubmit} className="lg:flex items-center my-6">
               <div className="font-bold text-xl">
@@ -59,7 +59,7 @@ const CurrencyConvert = () => {
                   onBlur={(e) => e.target.value}
                   type="text"
                   placeholder="1"
-                  className="input input-bordered input-info lg:w-full max-w-xs mt-2 bg-slate-300 text-info"
+                  className="input input-bordered input-info max-w-xs mt-2 bg-slate-300 text-info"
                 />
               </div>
               <div className="font-bold text-xl ">
