@@ -43,8 +43,7 @@ const CurrencyConvert = () => {
           backgroundImage: `url("https://i.ibb.co/jkfXFTD/bitcoin-3132574-340.jpg")`,
         }}
       >
-        <div className=" text-white">
-          {/* <div className=" opacity-100  "></div> */}
+        <div className="mx-12 lg:mx-0 lg:w-full text-white">
           <div className="convert-content">
             <h1 className="mb-12 text-5xl font-bold text-white">
               Cryptocurrency Calculator For Any Kind Of Currency
