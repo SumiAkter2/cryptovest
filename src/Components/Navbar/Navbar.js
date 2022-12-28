@@ -49,7 +49,7 @@ const Navbar = ({ children, cart }) => {
                 alt="bitcoin-logo"
               />
               <h2>CryptoVest</h2>
-              <div className=" ml-12">
+              <div className=" lg:ml-12">
                 <label class="switch">
                   <input type="checkbox" onClick={() => setDark(!dark)} />
                   <span class="sliders"></span>
