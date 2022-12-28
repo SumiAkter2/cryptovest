@@ -43,7 +43,7 @@ const CurrencyConvert = () => {
           backgroundImage: `url("https://i.ibb.co/jkfXFTD/bitcoin-3132574-340.jpg")`,
         }}
       >
-        <div className="mx-6  text-white">
+        <div className=" text-white">
           {/* <div className=" opacity-100  "></div> */}
           <div className="convert-content">
             <h1 className="mb-12 text-5xl font-bold text-white">

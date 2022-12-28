@@ -2,11 +2,11 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <div className="bg-primary lg:py-12 mb-1">
+    <div className="bg-primary lg:py-12 lg:m-12 m-6">
       <div className=" lg:flex justify-evenly items-center my-24 bg-accent p-12 m-12 rounded-md ">
         <div>
           <h1 className="text-3xl text-center text-primary">
-            SIGN UP TO NEWSLETTER !
+            SIGN UP TO NEWSLETTER 
           </h1>
           <h1 className="mt-4 text-black">
             Receive early updates Our products info.
