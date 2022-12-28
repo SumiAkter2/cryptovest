@@ -42,7 +42,7 @@ const Navbar = ({ children, cart }) => {
         <input id="  my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
           <div className="w-full navbar bg-primary  px-12   ">
-            <div className="flex-1 px-2 mx-2 font-bold text-2xl">
+            <div className="flex-1 px-2 lg:mx-2 font-bold text-2xl">
               <img
                 style={{ width: "70px" }}
                 src="https://i.ibb.co/XCqJxdh/realistic-bitcoin-crypto-currency-illustration-on-blue-background-vector-removebg-preview.png"
