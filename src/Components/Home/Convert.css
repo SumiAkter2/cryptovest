@@ -6,12 +6,11 @@
     background-blend-mode: lighten;
 }
 .convert-content{
-/* backdrop-filter: blur(5px); */
 padding: 20px;
 }
 
 
-@media screen and (max-width:560px) {
+@media screen and (max-width:360px) {
     .convert-content{
        width: 450px;
     }

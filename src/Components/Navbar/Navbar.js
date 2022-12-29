@@ -5,7 +5,7 @@ import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import swal from "sweetalert";
 import "../Home/toggle.css";
-// import "./Dashboard/Navbar.css";
+
 const Navbar = ({ children, cart }) => {
   const [user] = useAuthState(auth);
   const [dark, setDark] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = ({ children, cart }) => {
     <div data-theme={dark ? "dark" : "light"} className=" ">
       <div className="drawer drawer-end fixed top-0 ">
         <input id="  my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col ">
+        <div className="drawer-content flex flex-col">
           <div className="w-full navbar bg-primary  lg:px-12   ">
             <div className="flex-1 px-2 lg:mx-2 font-bold text-2xl">
               <img

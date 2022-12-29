@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Banner />
       <Info />
-      {/* <CurrencyConvert /> */}
+      <CurrencyConvert />
       <Coins />
       <Success />
       <Teams />

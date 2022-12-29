@@ -38,8 +38,7 @@ const CurrencyConvert = () => {
   return (
     <div>
       <div className="hero min-h-screen convert-container">
-        <div className="mx-6 text-white ">
-          {/* <div className=" opacity-50 "></div> */}
+        <div className="mx-6 text-white">
           <div className="text-start convert-content">
             <h1 className="mb-12 text-2xl lg:text-5xl font-bold text-white">
               Cryptocurrency Calculator
