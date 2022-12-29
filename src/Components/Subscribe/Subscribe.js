@@ -12,11 +12,11 @@ const Subscribe = () => {
             Receive early updates Our products info.
           </h1>
         </div>
-        <div className="flex mt-4">
+        <div className="lg:flex mt-4">
           <input
             type="text"
             placeholder="Type Email"
-            className="input input-bordered input-secondary w-full "
+            className="input input-bordered input-secondary w-full mb-4"
           />
           <button className="btn btn-outline btn-primary ml-3 text-white">
             Subscribe

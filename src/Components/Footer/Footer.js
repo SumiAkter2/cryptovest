@@ -64,7 +64,7 @@ const Footer = () => {
           <br />
         </div>
         <div className="md:place-self-center md:justify-self-end lg:p-10 p-5">
-          <div className="grid grid-flow-col gap-4 ml-4">
+          <div className="grid grid-flow-col gap-2 lg:gap-4 ml-4">
             <a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
