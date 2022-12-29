@@ -3,7 +3,7 @@ import React from "react";
 const Subscribe = () => {
   return (
     <div className="bg-primary lg:py-12 lg:m-12 m-6">
-      <div className=" lg:flex justify-evenly items-center my-24 bg-accent p-12 m-12 rounded-md ">
+      <div className=" lg:flex justify-evenly items-center my-24 bg-accent p-12 lg:m-12 rounded-md ">
         <div>
           <h1 className="text-3xl text-center text-primary">
             SIGN UP TO NEWSLETTER 
