@@ -52,7 +52,7 @@ const Testimonial = () => {
         <h1>
           <FaQuoteLeft color="skyBlue" />
         </h1>
-        <h1 className="text-center text-4xl text-neutral mx-4 mb-6">What Our Client Say</h1>
+        <h1 className="text-center lg:text-4xl text-2xl  text-neutral mx-4 mb-6">What Our Client Say</h1>
         <h1>
           <FaQuoteRight color="skyBlue" />
         </h1>

@@ -17,10 +17,10 @@ const Coin = () => {
             capitalization. Free access to current and historic data for Bitcoin
             and thousands of alt coins.
           </p>
-          <button className="btn btn-primary btn-outline my-5 mx-12 duration-300 ease-in ">
+          <button className="btn btn-primary btn-outline my-5 mx-12 duration-300 ease-in mb-6">
             <Link to="/">
               <p className="flex justify-center items-center ">
-                <BsFillArrowLeftSquareFill className="mr-2" /> Back to Home
+                <BsFillArrowLeftSquareFill className="mr-2 " /> Back to Home
               </p>
             </Link>
           </button>

@@ -23,28 +23,28 @@ const Success = () => {
             </p>
 
             <div className="grid lg:grid-cols-4 md:grid-cols-2 ">
-              <div>
+              <div className="mb-6">
                 <h1 className="text-5xl font-bold  flex justify-center items-center">
                   <GiWallet color="yellow" className="mr-2 " />
                   <CountUp delay={2} duration={1.75} start={0} end={10} />K
                 </h1>
                 <span className="text-sm font-bold">WALLET USERS</span>
               </div>
-              <div>
+              <div className="mb-6">
                 <h1 className="text-5xl font-bold  flex justify-center items-center">
                   <BsFillPersonFill color="yellow" className="mr-2 " />
                   <CountUp delay={2} duration={1.75} start={0} end={80} />K
                 </h1>
                 <span className="text-sm font-bold">ONLINE CONSULTANTS</span>
               </div>
-              <div>
+              <div className="mb-6">
                 <h1 className="text-5xl font-bold  flex justify-center items-center">
                   <BiTransfer color="yellow" className="mr-2 " />
                   <CountUp delay={2} duration={1.75} start={0} end={30} />
                 </h1>
                 <span className="text-sm font-bold">DAILY TRANSACTIONS</span>
               </div>
-              <div>
+              <div className="">
                 <h1 className="text-5xl font-bold  flex justify-center items-center">
                   <AiFillDollarCircle color="yellow" className="mr-2 " />
                   <CountUp delay={2} duration={1.75} start={0} end={210} />

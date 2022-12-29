@@ -15,7 +15,7 @@ const About = () => {
           />
         </figure>
         <div className="card-body">
-          <h1 className="lg:text-5xl text-3xl  font-bold px-12   pb-6">
+          <h1 className="lg:text-5xl text-3xl  font-bold px-12   pb-4">
             WelCome To CryptoVest.
           </h1>
           <p className=" font-bold px-12 mt-6">
