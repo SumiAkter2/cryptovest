@@ -1,11 +1,12 @@
 .convert-container{
-    background-image: url('../../img/depositphotos_152853602-stock-photo-bitcoin-coin-l-on-laptop.jpg');
+    background-image: url('../../img/bitcoin-3132574__340.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: lighten;
 }
 .convert-content{
+    backdrop-filter: blur(5px);
 padding: 20px;
 }
 

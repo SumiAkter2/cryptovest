@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </footer>
       <footer className="footer grid-cols-2 just lg:px-10 px-5 py-4  mt-2">
-        <div className="">
+        <div >
           <div>
             <div className="flex justify-start items-center  font-bold text-2xl">
               <img
