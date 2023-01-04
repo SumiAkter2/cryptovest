@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { BiCartAlt } from "react-icons/bi";
+import { TiContacts } from "react-icons/ti";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { CgProfile } from "react-icons/cg";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { BsCoin } from "react-icons/bs";
 import { MdOutlineSettings } from "react-icons/md";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
+import { AiOutlineHome } from "react-icons/ai";
+import { RxDashboard } from "react-icons/rx";
 import swal from "sweetalert";
 import "../Home/toggle.css";
 
@@ -15,32 +20,12 @@ const Navbar = ({ children, cart }) => {
   const [user] = useAuthState(auth);
   const [dark, setDark] = useState(false);
   const [signOut] = useSignOut(auth);
+  const navigate = useNavigate();
   let quantity = 0;
   cart.forEach((coin) => {
     quantity = quantity + coin.quantity;
   });
-  const navItems = [
-    <li>
-      <NavLink className="rounded-md h-12 my-auto" to="/">
-        Home
-      </NavLink>
-    </li>,
-    <li>
-      <NavLink className="rounded-md h-12 my-auto" to="/coin">
-        Coins
-      </NavLink>
-    </li>,
-    <li>
-      <NavLink className="rounded-md h-12 my-auto" to="/about">
-        About
-      </NavLink>
-    </li>,
-    <li>
-      <NavLink className="rounded-md h-12 my-auto" to="/contact">
-        Contact
-      </NavLink>
-    </li>,
-  ];
+  const navItems = [];
   return (
     <div data-theme={dark ? "dark" : "light"} className=" ">
       <div className="drawer drawer-end fixed top-0 ">
@@ -82,32 +67,38 @@ const Navbar = ({ children, cart }) => {
 
             <div className="flex-none hidden lg:block  ">
               <ul className="menu  menu-horizontal gap-x-2  ">
-                {navItems}
+                <li>
+                  <NavLink className="rounded-md h-12 my-auto" to="/">
+                    <AiOutlineHome /> Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className="rounded-md h-12 my-auto" to="/coin">
+                    <BsCoin /> Coins
+                  </NavLink>
+                </li>
 
+                <li>
+                  <NavLink className="rounded-md h-12 my-auto" to="/about">
+                    <IoMdInformationCircleOutline /> About
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink className="rounded-md h-12 my-auto" to="/contact">
+                    <TiContacts /> Contact
+                  </NavLink>
+                </li>
                 {user && (
                   <li>
                     <NavLink
                       className="rounded-lg h-12 my-auto"
                       to="/dashboard"
                     >
-                      Dashboard
+                      <RxDashboard /> Dashboard
                     </NavLink>
                   </li>
                 )}
-                {/* {user ? (
-                  <>
-                    <li>
-                      <NavLink>{user?.email}</NavLink>
-                      <NavLink>{user?.displayName}</NavLink>
-                    </li>
-                  </>
-                ) : (
-                  <li>
-                    <NavLink className="rounded-lg   " to="/login">
-                      Log In/Sign Up
-                    </NavLink>
-                  </li>
-                )} */}
                 {/* =======================cart============= */}
                 <li>
                   <NavLink className="rounded-lg h-12 my-auto">
@@ -184,6 +175,7 @@ const Navbar = ({ children, cart }) => {
                                         text: "You are Sign Out Now",
                                       });
                                     }
+                                    navigate("/");
                                   }}
                                 >
                                   <RiLogoutCircleRLine /> Sign Out
@@ -265,14 +257,14 @@ const Navbar = ({ children, cart }) => {
                       >
                         <div className="mx-auto">
                           <li>
-                            <a className="text-center">
+                            <Link className="text-center" to="/profile">
                               <CgProfile /> Profile
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a>
+                            <Link to="/setting">
                               <MdOutlineSettings /> Settings
-                            </a>
+                            </Link>
                           </li>
                           <li>
                             <button
@@ -285,6 +277,7 @@ const Navbar = ({ children, cart }) => {
                                     text: "You are Sign Out Now",
                                   });
                                 }
+                                navigate("/");
                               }}
                             >
                               <RiLogoutCircleRLine /> Sign Out
