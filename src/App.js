@@ -70,7 +70,7 @@ function App() {
             <Route path="/reset" element={<Reset />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/dashboard" element={<Dashboard />}>
-             {/* <Route path="order" element={<Order/>}></Route> */}
+             <Route path="order" element={<Order/>}></Route>
             </Route> 
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="*" element={<NotFound />}></Route>

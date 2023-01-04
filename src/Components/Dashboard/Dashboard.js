@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -9,7 +9,11 @@ const Dashboard = () => {
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* <!-- Page content here --> */}
 
-          <h1>Welcome Here</h1>
+          <Outlet></Outlet>
+          {/* <h1>
+            Welcome Here Let's make your portfolio enrich with more world
+            revolutionary coin's!
+          </h1> */}
           <label
             htmlFor="my-drawer-2"
             className="btn btn-secondary drawer-button lg:hidden mt-6"
@@ -22,7 +26,7 @@ const Dashboard = () => {
           <ul className="menu p-4 w-48 lg:w-80 bg-primary text-base-content">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <Link>Order </Link>
+              <Link to="/dashboard/order">Order </Link>
             </li>
             <li>
               <Link>Order </Link>
