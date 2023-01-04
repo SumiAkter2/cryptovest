@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import { BiCartAlt } from "react-icons/bi";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineSettings } from "react-icons/md";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import swal from "sweetalert";
 import "../Home/toggle.css";
 
@@ -122,10 +127,14 @@ const Navbar = ({ children, cart }) => {
                       >
                         <div className="mx-auto">
                           <li>
-                            <p>Item {quantity}</p>
+                            <p>
+                              <HiOutlineShoppingBag /> Item {quantity}
+                            </p>
                           </li>
                           <li>
-                            <Link to="/carts">View Cart</Link>
+                            <Link to="/carts">
+                              <BiCartAlt /> View Cart
+                            </Link>
                           </li>
                         </div>
                       </ul>
@@ -143,7 +152,6 @@ const Navbar = ({ children, cart }) => {
                           >
                             <div className="w-10 rounded-full   cursor-pointer">
                               <img
-                                className=""
                                 src="https://i.ibb.co/5sWZQdg/default-images.jpg"
                                 alt="profile-img"
                               />
@@ -156,10 +164,14 @@ const Navbar = ({ children, cart }) => {
                           >
                             <div className="mx-auto">
                               <li>
-                                <a className="text-center">Profile</a>
+                                <Link className="text-center" to="/profile">
+                                  <CgProfile /> Profile
+                                </Link>
                               </li>
                               <li>
-                                <a>Settings</a>
+                                <Link to="/setting">
+                                  <MdOutlineSettings /> Settings
+                                </Link>
                               </li>
                               <li>
                                 <button
@@ -174,7 +186,7 @@ const Navbar = ({ children, cart }) => {
                                     }
                                   }}
                                 >
-                                  Sign Out
+                                  <RiLogoutCircleRLine /> Sign Out
                                 </button>
                               </li>
                             </div>
@@ -200,7 +212,7 @@ const Navbar = ({ children, cart }) => {
             {navItems}
             <li>
               <NavLink className="rounded-lg h-12 my-auto">
-                <div className="dropdown dropdown-end ">
+                <div className="dropdown dropdown-bottom ">
                   <label tabIndex={0} className=" cursor-pointer indicator">
                     <span className="badge badge-sm indicator-item bg-primary text-gray-400">
                       {quantity}
@@ -216,10 +228,14 @@ const Navbar = ({ children, cart }) => {
                   >
                     <div className="mx-auto">
                       <li>
-                        <p>Item {quantity}</p>
+                        <p>
+                          <HiOutlineShoppingBag /> Item {quantity}
+                        </p>
                       </li>
                       <li>
-                        <Link to="/carts">View Cart</Link>
+                        <Link to="/carts">
+                          <BiCartAlt /> View Cart
+                        </Link>
                       </li>
                     </div>
                   </ul>
@@ -230,14 +246,13 @@ const Navbar = ({ children, cart }) => {
               <>
                 <li>
                   <NavLink className="rounded-lg h-12 my-auto">
-                    <div className="dropdown dropdown-end">
+                    <div className="dropdown dropdown-bottom">
                       <label
                         tabIndex={0}
                         className="avatar cursor-pointer btn btn-ghost"
                       >
                         <div className="w-10 rounded-full   cursor-pointer">
                           <img
-                            className=""
                             src="https://i.ibb.co/5sWZQdg/default-images.jpg"
                             alt="profile-img"
                           />
@@ -250,10 +265,14 @@ const Navbar = ({ children, cart }) => {
                       >
                         <div className="mx-auto">
                           <li>
-                            <a className="text-center">Profile</a>
+                            <a className="text-center">
+                              <CgProfile /> Profile
+                            </a>
                           </li>
                           <li>
-                            <a>Settings</a>
+                            <a>
+                              <MdOutlineSettings /> Settings
+                            </a>
                           </li>
                           <li>
                             <button
@@ -268,7 +287,7 @@ const Navbar = ({ children, cart }) => {
                                 }
                               }}
                             >
-                              Sign Out
+                              <RiLogoutCircleRLine /> Sign Out
                             </button>
                           </li>
                         </div>
