@@ -24,7 +24,7 @@ const SignUp = () => {
     });
     navigate("/");
     console.log(user);
-    console.log(error);
+    console.log(data);
   };
   return (
     <div className=" signup-bg ">
@@ -39,7 +39,7 @@ const SignUp = () => {
                 <span className="label-text text-black">Name</span>
               </label>
               <input
-                {...register("name", {
+                {...register("displayName", {
                   required: {
                     value: true,
                     message: "Name is required",
@@ -49,7 +49,7 @@ const SignUp = () => {
                 placeholder="Name"
                 className="input input-bordered"
               />
-              {errors.name?.type === "required" && (
+              {errors.displayName?.type === "required" && (
                 <span className=" text-error">{errors.name.message}</span>
               )}
             </div>

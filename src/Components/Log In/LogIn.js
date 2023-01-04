@@ -1,18 +1,13 @@
 import React from "react";
-import {
-  useAuthState,
-  useSendPasswordResetEmail,
-  useSignInWithEmailAndPassword,
-  useUpdatePassword,
-} from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../../Firebase/firebase.init";
 import Google from "./Google";
 
 const LogIn = () => {
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  // const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();

@@ -8,12 +8,14 @@ import auth from "../../Firebase/firebase.init";
 import { CgProfile } from "react-icons/cg";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { BsCoin } from "react-icons/bs";
+import { BiLogInCircle } from "react-icons/bi";
 import { MdOutlineSettings } from "react-icons/md";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineHome } from "react-icons/ai";
 import { RxDashboard } from "react-icons/rx";
 import swal from "sweetalert";
+import userImage from "../../img/user.jpg";
 import "../Home/toggle.css";
 
 const Navbar = ({ children, cart }) => {
@@ -25,7 +27,7 @@ const Navbar = ({ children, cart }) => {
   cart.forEach((coin) => {
     quantity = quantity + coin.quantity;
   });
-  const navItems = [];
+
   return (
     <div data-theme={dark ? "dark" : "light"} className=" ">
       <div className="drawer drawer-end fixed top-0 ">
@@ -40,9 +42,9 @@ const Navbar = ({ children, cart }) => {
               />
               <h2>CryptoVest</h2>
               <div className=" lg:ml-12 ml-2">
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" onClick={() => setDark(!dark)} />
-                  <span class="sliders"></span>
+                  <span className="sliders"></span>
                 </label>
               </div>
             </div>
@@ -142,10 +144,13 @@ const Navbar = ({ children, cart }) => {
                             className="avatar cursor-pointer btn btn-ghost"
                           >
                             <div className="w-10 rounded-full   cursor-pointer">
-                              <img
-                                src="https://i.ibb.co/5sWZQdg/default-images.jpg"
-                                alt="profile-img"
-                              />
+                              {user ? (
+                                <>
+                                  <img src={user.photoURL} alt="profile-img" />
+                                </>
+                              ) : (
+                                <img src={userImage} alt="profile-img" />
+                              )}
                               <span className="badge badge-xs bg-green-600 indicator-item"></span>
                             </div>
                           </label>
@@ -189,7 +194,9 @@ const Navbar = ({ children, cart }) => {
                   </>
                 ) : (
                   <li>
-                    <NavLink to="/login"> Log In</NavLink>
+                    <NavLink to="/login">
+                      <BiLogInCircle /> Log In
+                    </NavLink>
                   </li>
                 )}
               </ul>
@@ -201,7 +208,28 @@ const Navbar = ({ children, cart }) => {
         <div className="drawer-side   ">
           <label for="  my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-2 overflow-y-auto w-80 bg-base-100">
-            {navItems}
+            <li>
+              <NavLink className="rounded-md h-12 my-auto" to="/">
+                <AiOutlineHome /> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="rounded-md h-12 my-auto" to="/coin">
+                <BsCoin /> Coins
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className="rounded-md h-12 my-auto" to="/about">
+                <IoMdInformationCircleOutline /> About
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink className="rounded-md h-12 my-auto" to="/contact">
+                <TiContacts /> Contact
+              </NavLink>
+            </li>
             <li>
               <NavLink className="rounded-lg h-12 my-auto">
                 <div className="dropdown dropdown-bottom ">
@@ -244,10 +272,13 @@ const Navbar = ({ children, cart }) => {
                         className="avatar cursor-pointer btn btn-ghost"
                       >
                         <div className="w-10 rounded-full   cursor-pointer">
-                          <img
-                            src="https://i.ibb.co/5sWZQdg/default-images.jpg"
-                            alt="profile-img"
-                          />
+                          {user ? (
+                            <>
+                              <img src={user.photoURL} alt="profile-img" />
+                            </>
+                          ) : (
+                            <img src={userImage} alt="profile-img" />
+                          )}
                           <span className="badge badge-xs bg-green-600 indicator-item"></span>
                         </div>
                       </label>
@@ -291,7 +322,9 @@ const Navbar = ({ children, cart }) => {
               </>
             ) : (
               <li>
-                <NavLink to="/login"> Log In</NavLink>
+                <NavLink to="/login">
+                  <BiLogInCircle /> Log In
+                </NavLink>
               </li>
             )}
           </ul>
